@@ -2,7 +2,8 @@
 
 session_start();
 
-$grid = array(
+
+$grille = array(
     array(0, 0, 0, 0, 0, 0, 0), // ligne 1
     array(0, 0, 0, 0, 0, 0, 0), // ligne 2
     array(0, 0, 0, 0, 0, 0, 0), // ligne 3
@@ -12,13 +13,16 @@ $grid = array(
 );
 
 //echo json_encode($grid);
-function afficherGrille($grid) {
-    for ($i = 0; $i < count($grid); $i++) {
-        for ($j = 0; $j < count($grid[$i]); $j++) {
-            echo "| " . $grid[$i][$j] . " ";
+function afficherGrille($grille) {
+    for ($i = 0; $i < count($grille); $i++) {
+        for ($j = 0; $j < count($grille[$i]); $j++) {
+            echo "| " . $grille[$i][$j] . " ";
         }
-        echo "|\n";
+        echo "|<br>";
     }
-    echo "---------------\n";
+    echo "---------------<br>";
 }
+$_SESSION["Joueur1"] = $nameplayer1;
+$_SESSION["Joueur2"] = $nameplayer2;
+$_SESSION["grille"] = $grille;
 afficherGrille($grid);
