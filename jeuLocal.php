@@ -20,7 +20,7 @@ function afficherGrille($grille) {
         }
         echo "|<br>";
     }
-    echo "---------------<br>";
+    //echo "- --------------<br>";
 }
 $_SESSION["Joueur1"] = $nameplayer1;
 $_SESSION["Joueur2"] = $nameplayer2;
