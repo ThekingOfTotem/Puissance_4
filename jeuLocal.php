@@ -12,7 +12,7 @@ $grid = array(
 );
 
 //echo json_encode($grid);
-function displayGrid($grid) {
+function afficherGrille($grid) {
     for ($i = 0; $i < count($grid); $i++) {
         for ($j = 0; $j < count($grid[$i]); $j++) {
             echo "| " . $grid[$i][$j] . " ";
@@ -21,4 +21,4 @@ function displayGrid($grid) {
     }
     echo "---------------\n";
 }
-displayGrid($grid);
+afficherGrille($grid);
