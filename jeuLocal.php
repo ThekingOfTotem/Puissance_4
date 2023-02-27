@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+$_SESSION["Joueur1"] = $_GET["name1"];
+$_SESSION["Joueur2"] = $_GET["name2"];
 
 
 $grille = array(
@@ -12,6 +14,11 @@ $grille = array(
     array(0, 0, 0, 0, 0, 0, 0) // ligne 6
 );
 
+function coupAutorise($grille){
+
+
+}
+
 //echo json_encode($grid);
 function afficherGrille($grille) {
     for ($i = 0; $i < count($grille); $i++) {
@@ -22,6 +29,8 @@ function afficherGrille($grille) {
     }
     //echo "- --------------<br>";
 }
+
+
 $_SESSION["Joueur1"] = $nameplayer1;
 $_SESSION["Joueur2"] = $nameplayer2;
 $_SESSION["grille"] = $grille;

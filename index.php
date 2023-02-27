@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +8,13 @@
 </head>
 
 <body>
-
+    <form method="get" action="page1.php">
+		<input type="submit" value="Jeu en Ligne">
+	</form>
+	
+	<form method="get" action="demarrerPartieLocal.php">
+		<input type="submit" value="Jeu Local">
+	</form>
 </body>
 
 </html>
