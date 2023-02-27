@@ -16,7 +16,7 @@ function displayGrid($grid) {
         for ($j = 0; $j < count($grid[$i]); $j++) {
             echo "| " . $grid[$i][$j] . " ";
         }
-        echo "|\n";
+        echo nl2br("|\n");
     }
     echo "---------------\n";
 }
