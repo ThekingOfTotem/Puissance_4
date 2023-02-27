@@ -11,4 +11,4 @@ $grid = array(
     array(0, 0, 0, 0, 0, 0, 0) // ligne 6
 );
 
-echo $grid;
+echo json_encode($grid);
