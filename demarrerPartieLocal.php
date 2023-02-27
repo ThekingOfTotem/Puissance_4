@@ -1,10 +1,19 @@
+<!DOCTYPE html>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Puissance 4</title>
+    <!--lien avec le css-->
+    <link href="/css/style.css" />
+</head>
 
-<form method="get" action="resultats.php">
-	<label for="joueur1">Nom du joueur 1:</label>
+<body>
+
+<form method="get" > // action="resultats.php"
+	<label for="Joueur1">Nom du joueur 1:</label>
 	<input type="text" id="joueur1" name="joueur1"><br>
 		
-	<label for="joueur2">Nom du joueur 2:</label>
+	<label for="Joueur2">Nom du joueur 2:</label>
 	<input type="text" id="joueur2" name="joueur2"><br>
 		
 	<input type="submit" value="Valider">
@@ -13,8 +22,8 @@
 <?php
 
 session_start();
-$_SESSION["Joueur1"] = $_GET["name1"];
-$_SESSION["Joueur2"] = $_GET["name2"];
+$_SESSION["Joueur1"] = $_GET["joueur1"];
+$_SESSION["Joueur2"] = $_GET["joueur2"];
 
 $grille = array(
     array(0, 0, 0, 0, 0, 0, 0), // ligne 1
@@ -26,3 +35,8 @@ $grille = array(
 );
 
 $_SESSION["grille"]=$grille;
+?>
+
+</body>
+
+</html>
