@@ -21,3 +21,4 @@ function displayGrid($grid) {
     }
     echo "---------------\n";
 }
+displayGrid($grid);
