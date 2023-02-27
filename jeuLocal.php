@@ -25,4 +25,4 @@ function afficherGrille($grille) {
 $_SESSION["Joueur1"] = $nameplayer1;
 $_SESSION["Joueur2"] = $nameplayer2;
 $_SESSION["grille"] = $grille;
-afficherGrille($grid);
+afficherGrille($grille);
