@@ -50,12 +50,12 @@ function checkWinner($grid, $player) {
             }
         }
     }
+}
     // Vérification des diagonales vers le haut
-    for ($i = 3; $i < count($grid); $i++) {
+   /* for ($i = 3; $i < count($grid); $i++) {
         for ($j = 0; $j < count($grid[$i]) - 3; $j++) {
             if ($grid[$i][$j] == $player && $grid[$i-1][$j+1] == $player && $grid[$i-2][$j+2] == $player && $grid[$i-3][$j+3] == $player) {
                 return
             }
         }
-    }
-}
+    }*/
