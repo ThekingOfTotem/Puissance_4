@@ -9,7 +9,7 @@
 
 <body>
 
-<form method="get" > // action="resultats.php"
+<form method="get" > <!-- action="resultats.php"-->
 	<label for="Joueur1">Nom du joueur 1:</label>
 	<input type="text" id="joueur1" name="joueur1"><br>
 		
