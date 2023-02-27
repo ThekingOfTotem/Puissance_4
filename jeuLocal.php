@@ -11,7 +11,7 @@ $grid = array(
     array(0, 0, 0, 0, 0, 0, 0) // ligne 6
 );
 
-echo json_encode($grid);
+//echo json_encode($grid);
 function displayGrid($grid) {
     for ($i = 0; $i < count($grid); $i++) {
         for ($j = 0; $j < count($grid[$i]); $j++) {
