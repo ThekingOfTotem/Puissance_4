@@ -11,10 +11,10 @@
 
 <form method="get" action="jouerCoup.php">
     <!--On demande le nom des joueurs-->
-	<label for="Joueur1">Nom du joueur 1 : </label>
+	<label for="joueur1">Nom du joueur 1 : </label>
 	<input type="text" id="joueur1" name="joueur1"><br>
 		
-	<label for="Joueur2">Nom du joueur 2 : </label>
+	<label for="joueur2">Nom du joueur 2 : </label>
 	<input type="text" id="joueur2" name="joueur2"><br>
 		
 	<input type="submit" value="Valider">
@@ -32,8 +32,8 @@ $grille = array(
 
 //on attribue la grille et joueurs a la nouvelle partie 
 $_SESSION["grille"] = $grille;
-$_SESSION["Joueur1"] = $joueur1;
-$_SESSION["Joueur2"] = $joueur2;
+$_SESSION["joueur1"] = $joueur1;
+$_SESSION["joueur2"] = $joueur2;
 ?>
 </body>
 
