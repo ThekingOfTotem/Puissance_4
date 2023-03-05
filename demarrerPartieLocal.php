@@ -22,18 +22,18 @@
 <?php
 //on initialise notre grille vide
 $grille = array(
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 1
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 2
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 3
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 4
+    array(0, 0, 0, 0, 0, 0, 0), // ligne 6
     array(0, 0, 0, 0, 0, 0, 0), // ligne 5
-    array(0, 0, 0, 0, 0, 0, 0) // ligne 6
+    array(0, 0, 0, 0, 0, 0, 0), // ligne 4
+    array(0, 0, 0, 0, 0, 0, 0), // ligne 3
+    array(0, 0, 0, 0, 0, 0, 0), // ligne 2
+    array(0, 0, 0, 0, 0, 0, 0) // ligne 1
 );
 
 //on attribue la grille et joueurs a la nouvelle partie 
 $_SESSION["grille"] = $grille;
-$_SESSION["joueur1"] = $joueur1;
-$_SESSION["joueur2"] = $joueur2;
+$_SESSION["nom1"] = $joueur1;
+$_SESSION["nom2"] = $joueur2;
 ?>
 </body>
 

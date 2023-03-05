@@ -1,14 +1,16 @@
 <?php
 
 // Définition de la grille du Puissance 4
-$grid = array(
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 1
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 2
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 3
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 4
-    array(0, 0, 0, 0, 0, 0, 0), // ligne 5
-    array(0, 0, 0, 0, 0, 0, 0) // ligne 6
-);
+// $grid = array(
+//     array(0, 0, 0, 0, 0, 0, 0), // ligne 6
+//     array(0, 0, 0, 0, 0, 0, 0), // ligne 5
+//     array(0, 0, 0, 0, 0, 0, 0), // ligne 4
+//     array(0, 0, 0, 0, 0, 0, 0), // ligne 3
+//     array(0, 0, 0, 0, 0, 0, 0), // ligne 2
+//     array(0, 0, 0, 0, 0, 0, 0) // ligne 1
+// );
+
+$grid = array_fill(0, 6, array_fill(0, 7, 0));
 
 // Fonction pour afficher la grille
 function displayGrid($grid) {
@@ -59,3 +61,4 @@ function checkWinner($grid, $player) {
             }
         }
     }*/
+    ?>
