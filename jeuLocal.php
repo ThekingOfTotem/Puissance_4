@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+$_SESSION["Joueur1"] = $_GET["joueur1"];
+$_SESSION["Joueur2"] = $_GET["joueur2"];
+
 $grille = array(
     array(0, 0, 0, 0, 0, 0, 0), // ligne 1
     array(0, 0, 0, 0, 0, 0, 0), // ligne 2
