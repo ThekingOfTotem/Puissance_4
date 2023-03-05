@@ -10,10 +10,10 @@
 <body>
 
 <form method="get" action="jeuLocal.php">
-	<label for="Joueur1">Nom du joueur 1:</label>
+	<label for="Joueur1">Nom du joueur 1 : </label>
 	<input type="text" id="joueur1" name="joueur1"><br>
 		
-	<label for="Joueur2">Nom du joueur 2:</label>
+	<label for="Joueur2">Nom du joueur 2 : </label>
 	<input type="text" id="joueur2" name="joueur2"><br>
 		
 	<input type="submit" value="Valider">

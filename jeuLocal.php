@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+// On récupère les noms du joueurs
 $_SESSION["Joueur1"] = $_GET["joueur1"];
 $_SESSION["Joueur2"] = $_GET["joueur2"];
 
@@ -30,7 +31,6 @@ function afficherGrille($grille) {
 }
 
 
-$_SESSION["Joueur1"] = $nameplayer1;
-$_SESSION["Joueur2"] = $nameplayer2;
+
 $_SESSION["grille"] = $grille;
 afficherGrille($grille);

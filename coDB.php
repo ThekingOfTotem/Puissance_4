@@ -8,11 +8,3 @@ function seConnecter(){
     return $pdo;
 }
 ?>
-
-prouet
-
-blap
-blep
-blip
-blop
-blup
