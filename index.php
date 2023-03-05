@@ -12,7 +12,7 @@
 		<input type="submit" value="Jeu en Ligne">
 	</form>
 	
-	<form method="get" action="demarrerPartieLocal.php">
+	<form method="get" action="/LOCAL/demarrerPartieLocal.php">
 		<input type="submit" value="Jeu Local">
 	</form>
 </body>
