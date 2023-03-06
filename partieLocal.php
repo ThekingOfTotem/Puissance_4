@@ -9,7 +9,7 @@
 
 <body>
 
-    <div id="board">
+    <div id="grille">
 		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
 		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
 		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>

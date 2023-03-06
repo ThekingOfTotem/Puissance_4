@@ -135,7 +135,7 @@ function verifHaut($grille,$position,$col){
 
 function verifBas($grille,$position,$col,$tour){
     $cpt=0;
-    if($col-3 >=0){
+    if($position-3 >=0){
         for($i=0;$i<3;$i++){
             if($tour == "Joueur1"){
                 if($grille[$position-$i][$col]==1){
@@ -157,12 +157,118 @@ function verifBas($grille,$position,$col,$tour){
                 }
             }
         }   
-
     }
 }
-function victoire($grille,$tour){
-for ($i = 0)
-    
+
+function verifHautDroit($grille,$position,$col,$tour){
+    $cpt=0;
+    if($position+3 <= 5 && $col+3 <=6){
+        for($i=0;$i<3;$i++){
+            if($tour == "Joueur1"){
+                if($grille[$position+$i][$col+$i]==1){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }else{
+                if($grille[$position+$i][$col+$i]==2){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }
+        }   
+    }
+}
+
+function verifHautGauche($grille,$position,$col,$tour){
+    $cpt=0;
+    if($position+3 <= 5 && $col-3 >= 0){
+        for($i=0;$i<3;$i++){
+            if($tour == "Joueur1"){
+                if($grille[$position+$i][$col-$i]==1){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }else{
+                if($grille[$position+$i][$col-$i]==2){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }
+        }   
+    }
+}
+
+function verifBasDroit($grille,$position,$col,$tour){
+    $cpt=0;
+    if($position-3 >= 0 && $col-3 >= 0){
+        for($i=0;$i<3;$i++){
+            if($tour == "Joueur1"){
+                if($grille[$position-$i][$col-$i]==1){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }else{
+                if($grille[$position-$i][$col-$i]==2){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }
+        }   
+    }
+}
+
+function verifBasGauche($grille,$position,$col,$tour){
+    $cpt=0;
+    if($position-3 >= 0 && $col+3 <= 6){
+        for($i=0;$i<3;$i++){
+            if($tour == "Joueur1"){
+                if($grille[$position-$i][$col+$i]==1){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }else{
+                if($grille[$position-$i][$col+$i]==2){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }
+        }   
+    }
+}
+
+function victoire($grille,$tour){    
 $_SESSION["grille"] = $grille;
 }
 
