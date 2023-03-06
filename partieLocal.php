@@ -26,11 +26,11 @@
         echo "<tr>";
         for ($j = 0; $j < 7; $j++) {
           if ($grille[$i][$j] == 1) {
-            echo "<td style='background-color: red;'></td>";
+            echo "<td style='background-color: red;' classe=piece></td>";
           } elseif ($grille[$i][$j] == 2) {
-            echo "<td style='background-color: yellow;'></td>";
+            echo "<td style='background-color: yellow;' classe=piece></td>";
           }else {
-            echo "<td style='background-color: red;'></td>";
+            echo "<td style='background-color: black;' classe=piece></td>";
           }
         }
         echo "</tr>";
