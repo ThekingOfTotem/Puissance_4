@@ -20,23 +20,17 @@
     ?>
 
     <h1>Ma grille :</h1>
-    <table class="ma-grille">
+    <div id="ma-grille">
     <?php
-      for ($i = 0; $i < 6; $i++) {
-        echo "<tr>";
-        for ($j = 0; $j < 7; $j++) {
-          if ($grille[$i][$j] == 1) {
-            echo "<td style='background-color: red;' class=piece></td>";
-          } elseif ($grille[$i][$j] == 2) {
-            echo "<td style='background-color: yellow;' class=piece></td>";
-          }else {
-            echo "<td style='background-color: white;' class=piece></td>";
-          }
+    
+      for ($ligne = 0; $ligne < 6; $ligne++) {
+        for ($colonne = 0; $colonne < 7; $colonne++) {
+            $numeCase = $ligne*6+$colonne;
+            echo "<div id="+$numCase+" data-ligne="+$ligne+" data-colonne="+$colonne+"></div>";
         }
-        echo "</tr>";
       }
     ?>
-    </table>
+    </div>
  
 </body>
 

@@ -2,7 +2,7 @@
 session_start();
 
 $col = $_SESSION["col"];
-$position;
+//$position;
 
 
 //Verifier l'autorisation du coup 
