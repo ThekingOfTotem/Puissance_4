@@ -52,7 +52,7 @@ function jouerCoup($grille,$col){
 
 function verifDroit($grille,$position,$col,$tour){
     $cpt=0;
-    if($col+3 <=7){
+    if($col+3 <=6){
         for($i=0;$i<3;$i++){
             if($tour == "Joueur1"){
                 if($grille[$position][$col+$i]==1){
@@ -98,21 +98,26 @@ function verifGauche($grille,$position,$col){
             }
         }
     }
+    if ($cmp==4){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 function verifHaut($grille,$position,$col){
     $cmp=0;
-    if($col-3 >= 0){
+    if($position+3 <= 5){
             for ($i = 0; $i<3; $i++){
                 if ($_SESSION["tour"]=="Joueur1"){ //si le joueur 1 joue
-                    if($grille[$position][$col-$i]==1){
+                    if($grille[$position+$i][$col]==1){
                         $cmp++;
                     }else{
                         exit;
                     }
                 }
                 if ($_SESSION["tour"]=="Joueur2"){ //si le joueur 2 joue
-                    if($grille[$position][$col-$i]==2){
+                    if($grille[$position+$i][$col]==2){
                         $cmp++;
                     }else{
                         exit;
@@ -120,15 +125,42 @@ function verifHaut($grille,$position,$col){
                 }
             }
         }
-    }
-
     if ($cmp==4){
         return true;
     }else{
         return false;
     }
 }
-function victoire($grille){
+
+
+function verifBas($grille,$position,$col,$tour){
+    $cpt=0;
+    if($col-3 <=5){
+        for($i=0;$i<3;$i++){
+            if($tour == "Joueur1"){
+                if($grille[$position][$col+$i]==1){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }else{
+                if($grille[$position][$col+$i]==2){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }
+        }   
+
+    }
+}
+function victoire($grille,$tour){
 for ($i = 0)
     
 $_SESSION["grille"] = $grille;

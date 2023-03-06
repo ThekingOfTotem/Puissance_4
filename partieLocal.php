@@ -29,7 +29,6 @@ session_start();
 $_SESSION["nomJoueur1"] = $_GET["joueur1"];
 $_SESSION["nomJoueur2"] = $_GET["joueur2"];
 $_SESSION["tour"]="Joueur1";
-$_SESSION["col"] = $_GET["colonne"];
 
 $grille = array_fill(0, 6, array_fill(0, 7, 0));
 
