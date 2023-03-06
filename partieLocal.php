@@ -17,7 +17,7 @@
 		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
 		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
 	</div>
-
+ 
 </body>
 
 </html>
