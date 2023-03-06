@@ -26,7 +26,7 @@
       for ($ligne = 0; $ligne < 6; $ligne++) {
         for ($colonne = 0; $colonne < 7; $colonne++) {
             $numCase = $ligne*6+$colonne;
-            echo "<div id=".$numCase." data-ligne=".$ligne." data-colonne=".$colonne."></div>";
+            echo "<div id=".$numCase." data-ligne=".$ligne." data-colonne=".$colonne." class=case ></div>";
         }
       }
     ?>
