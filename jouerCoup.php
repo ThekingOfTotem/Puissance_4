@@ -268,8 +268,14 @@ function verifBasGauche($grille,$position,$col,$tour){
     }
 }
 
-function victoire($grille,$tour){   
-    if (verifBas($grille,$position,$col,$tour)||verifHaut($grille,$position,$col,$tour)||verifGauche($grille,$position,$col,$tour),)
+function victoire($grille,$position,$col,$tour){   
+    if (verifBas($grille,$position,$col,$tour)||verifHaut($grille,$position,$col,$tour)||verifGauche($grille,$position,$col,$tour)||verifDroit($grille,$position,$col,$tour)){
+        if(verifBasDroit($grille,$position,$col,$tour)||verifBasGauche($grille,$position,$col,$tour)||verifHautDroit($grille,$position,$col,$tour)||verifHautGauche($grille,$position,$col,$tour)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 $_SESSION["grille"] = $grille;
 }
 

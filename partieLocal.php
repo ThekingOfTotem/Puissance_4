@@ -8,6 +8,17 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    $_SESSION["nomJoueur1"] = $_GET["joueur1"];
+    $_SESSION["nomJoueur2"] = $_GET["joueur2"];
+    $_SESSION["tour"]="Joueur1";
+
+    $grille = array_fill(0, 6, array_fill(0, 7, 0));
+
+    $_SESSION["grille"]=$grille;
+    ?>
+    
     <h1>Ma grille :</h1>
     <table>
     <?php
@@ -30,18 +41,3 @@
 </body>
 
 </html>
-
-
-
-<?php
-session_start();
-$_SESSION["nomJoueur1"] = $_GET["joueur1"];
-$_SESSION["nomJoueur2"] = $_GET["joueur2"];
-$_SESSION["tour"]="Joueur1";
-
-$grille = array_fill(0, 6, array_fill(0, 7, 0));
-
-$_SESSION["grille"]=$grille;
-
-
-?>
