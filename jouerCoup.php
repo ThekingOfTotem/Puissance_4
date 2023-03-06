@@ -268,6 +268,7 @@ function verifBasGauche($grille,$position,$col,$tour){
     }
 }
 
+//si une des verifs est ok, on valide la victoire et pousse la grille 
 function victoire($grille,$position,$col,$tour){   
     if (verifBas($grille,$position,$col,$tour)||verifHaut($grille,$position,$col,$tour)||verifGauche($grille,$position,$col,$tour)||verifDroit($grille,$position,$col,$tour)){
         if(verifBasDroit($grille,$position,$col,$tour)||verifBasGauche($grille,$position,$col,$tour)||verifHautDroit($grille,$position,$col,$tour)||verifHautGauche($grille,$position,$col,$tour)){
@@ -278,7 +279,5 @@ function victoire($grille,$position,$col,$tour){
     }
 $_SESSION["grille"] = $grille;
 }
-
-
 //
 ?>

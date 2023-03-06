@@ -18,7 +18,7 @@
 
     $_SESSION["grille"]=$grille;
     ?>
-    
+
     <h1>Ma grille :</h1>
     <table>
     <?php
@@ -30,7 +30,7 @@
           } elseif ($grille[$i][$j] == 2) {
             echo "<td style='background-color: yellow;'></td>";
           }else {
-            echo "<td></td>";
+            echo "<td style='background-color: red;'></td>";
           }
         }
         echo "</tr>";
