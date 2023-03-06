@@ -8,15 +8,24 @@
 </head>
 
 <body>
-
-    <div id="grille">
-		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-	</div>
+    <h1>Ma grille :</h1>
+    <table>
+    <?php
+      for ($i = 0; $i < 6; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j < 7; $j++) {
+          if ($grille[$i][$j] == 1) {
+            echo "<td style='background-color: red;'></td>";
+          } elseif ($grille[$i][$j] == 2) {
+            echo "<td style='background-color: yellow;'></td>";
+          }else {
+            echo "<td></td>";
+          }
+        }
+        echo "</tr>";
+      }
+    ?>
+    </table>
  
 </body>
 

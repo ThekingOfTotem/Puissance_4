@@ -27,7 +27,8 @@ function grilleRemplie($grille){
     }
 }
 
-//On joue le coup 
+//On joue le coup
+$position=0; 
 function jouerCoup($grille,$col){
     //Si le coup est possible
     if(coupPossible($grille,$col)){
@@ -78,7 +79,7 @@ function verifDroit($grille,$position,$col,$tour){
     }
 }
 
-function verifGauche($grille,$position,$col){
+function verifGauche($grille,$position,$col,$tour){
     $cmp=0;
     if($col-3 >= 0){
         for ($i = 0; $i<3; $i++){
@@ -105,7 +106,7 @@ function verifGauche($grille,$position,$col){
     }
 }
 
-function verifHaut($grille,$position,$col){
+function verifHaut($grille,$position,$col,$tour){
     $cmp=0;
     if($position+3 <= 5){
             for ($i = 0; $i<3; $i++){
@@ -131,7 +132,6 @@ function verifHaut($grille,$position,$col){
         return false;
     }
 }
-
 
 function verifBas($grille,$position,$col,$tour){
     $cpt=0;
@@ -268,7 +268,8 @@ function verifBasGauche($grille,$position,$col,$tour){
     }
 }
 
-function victoire($grille,$tour){    
+function victoire($grille,$tour){   
+    if (verifBas($grille,$position,$col,$tour)||verifHaut($grille,$position,$col,$tour)||verifGauche($grille,$position,$col,$tour),)
 $_SESSION["grille"] = $grille;
 }
 
