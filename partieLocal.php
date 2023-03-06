@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Puissance 4</title>
+    <!--lien avec le css-->
+    <link href="/css/style.css" />
+</head>
+
+<body>
+
+    <div id="board">
+		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+		<div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+	</div>
+
+</body>
+
+</html>
+
+
+
+<?php
+session_start();
+$_SESSION["nomJoueur1"] = $_GET["joueur1"];
+$_SESSION["nomJoueur2"] = $_GET["joueur2"];
+$_SESSION["tour"]="Joueur1";
+$_SESSION["col"] = $_GET["colonne"];
+
+$grille = array_fill(0, 6, array_fill(0, 7, 0));
+
+$_SESSION["grille"]=$grille;
+
+
+?>

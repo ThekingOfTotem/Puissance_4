@@ -1,12 +1,10 @@
 <?php
 session_start();
-$grille = $_POST["grille"];
-$_SESSION["nomJoueur1"] = $_GET["joueur1"];
-$_SESSION["nomJoueur2"] = $_GET["joueur2"];
-$_SESSION["tour"]="Joueur1";
-$_SESSION["col"] = $_GET["colonne"];
+
 $col = $_SESSION["col"];
 $position;
+
+
 //Verifier l'autorisation du coup 
 //On vérifie si la colonne n'est pas vide
 function coupPossible($grille, $col){
@@ -52,6 +50,84 @@ function jouerCoup($grille,$col){
     }   
 }
 
+function verifDroit($grille,$position,$col,$tour){
+    $cpt=0;
+    if($col+3 <=7){
+        for($i=0;$i<3;$i++){
+            if($tour == "Joueur1"){
+                if($grille[$position][$col+$i]==1){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }else{
+                if($grille[$position][$col+$i]==2){
+                    $cpt++;
+                }else{
+                    exit;
+                }
+                if($cpt == 4){
+                    return true;
+                }
+            }
+        }   
+
+    }
+}
+
+function verifGauche($grille,$position,$col){
+    $cmp=0;
+    if($col-3 >= 0){
+        for ($i = 0; $i<3; $i++){
+            if ($_SESSION["tour"]=="Joueur1"){ //si le joueur 1 joue
+                if($grille[$position][$col-$i]==1){
+                    $cmp++;
+                }else{
+                    exit;
+                }
+            }
+            if ($_SESSION["tour"]=="Joueur2"){ //si le joueur 2 joue
+                if($grille[$position][$col-$i]==2){
+                    $cmp++;
+                }else{
+                    exit;
+                }
+            }
+        }
+    }
+}
+
+function verifHaut($grille,$position,$col){
+    $cmp=0;
+    if($col-3 >= 0){
+            for ($i = 0; $i<3; $i++){
+                if ($_SESSION["tour"]=="Joueur1"){ //si le joueur 1 joue
+                    if($grille[$position][$col-$i]==1){
+                        $cmp++;
+                    }else{
+                        exit;
+                    }
+                }
+                if ($_SESSION["tour"]=="Joueur2"){ //si le joueur 2 joue
+                    if($grille[$position][$col-$i]==2){
+                        $cmp++;
+                    }else{
+                        exit;
+                    }
+                }
+            }
+        }
+    }
+
+    if ($cmp==4){
+        return true;
+    }else{
+        return false;
+    }
+}
 function victoire($grille){
 for ($i = 0)
     
