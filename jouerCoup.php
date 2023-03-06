@@ -135,10 +135,10 @@ function verifHaut($grille,$position,$col){
 
 function verifBas($grille,$position,$col,$tour){
     $cpt=0;
-    if($col-3 <=5){
+    if($col-3 >=0){
         for($i=0;$i<3;$i++){
             if($tour == "Joueur1"){
-                if($grille[$position][$col+$i]==1){
+                if($grille[$position-$i][$col]==1){
                     $cpt++;
                 }else{
                     exit;
@@ -147,7 +147,7 @@ function verifBas($grille,$position,$col,$tour){
                     return true;
                 }
             }else{
-                if($grille[$position][$col+$i]==2){
+                if($grille[$position-$i][$col]==2){
                     $cpt++;
                 }else{
                     exit;
