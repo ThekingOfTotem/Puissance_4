@@ -2,7 +2,7 @@
 
 #ma-grille {
     width: 425px;
-    height: 350px;
+    height: 360px;
     background-color: blue;
 }
 
@@ -12,7 +12,7 @@
     height: 50px;
     border-radius: 50%;
     border: 1px solid black;
-    margin: 2px;
+    margin: 3px;
     background-color: white;
 }
 
