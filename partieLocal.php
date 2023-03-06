@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Puissance 4</title>
     <!--lien avec le css-->
-    <link href="/css/style.css" />
+    <link href="/CSS/style.css" />
 </head>
 
 <body>
