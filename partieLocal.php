@@ -20,7 +20,7 @@
     ?>
 
     <h1>Ma grille :</h1>
-    <table>
+    <table class="ma-grille">
     <?php
       for ($i = 0; $i < 6; $i++) {
         echo "<tr>";
@@ -30,7 +30,7 @@
           } elseif ($grille[$i][$j] == 2) {
             echo "<td style='background-color: yellow;' class=piece></td>";
           }else {
-            echo "<td style='background-color: black;' class=piece></td>";
+            echo "<td style='background-color: white;' class=piece></td>";
           }
         }
         echo "</tr>";
