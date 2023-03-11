@@ -9,15 +9,19 @@
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      cursor: pointer;
  }
+
+ .retour{
+    font-size: 20px;
+ }
  
  .jaune {
      background-color: yellow;
-     margin-left: 500px;
+     margin-right: 10px;
  }
  
  .rouge {
      background-color: red;
-     margin-left: 150px;
+     margin-left: 10px;
  }
  
  html,
@@ -25,12 +29,17 @@
      height: 100%;
  }
 
+ #block_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
  #titre{
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
-    margin-left: 500px;
-    margin-right: auto;
+    text-align: center;
  }
  
  body {
