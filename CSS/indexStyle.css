@@ -28,7 +28,9 @@
  }
 
  #block_button{
+    display: flex;
     align-items: center;
+    justify-content: center;
  }
 
  #titre{
