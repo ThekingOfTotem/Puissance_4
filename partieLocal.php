@@ -26,13 +26,13 @@
     
     <?php
       echo "<div id=jeu class=element-centre>";
-      echo "<div id=mes-boutons class=element-centre>";
+      echo "<div id=mes-boutons>";
       for ($colonne = 0; $colonne < 7; $colonne++) {
         echo "<button data-colonne=".$colonne." class=Bouton></button>";
       }
       echo "</div>";
 
-      echo "<div id=ma-grille class=element-centre>";
+      echo "<div id=ma-grille>";
 
       for ($ligne = 0; $ligne < 6; $ligne++) {
         for ($colonne = 0; $colonne < 7; $colonne++) {
