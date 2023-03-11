@@ -12,12 +12,14 @@
 
 <form method="get" action="partieLocal.php">
     <!--On demande le nom des joueurs-->
-    <div id="names">
+    <div id="name1">
 	    <label for="joueur1">Nom du joueur 1 : </label>
-	    <input type="text" id="joueur1" name="joueur1"><pre>
+	    <input type="text" id="joueur1" name="joueur1">
+    </div>
 
+    <div id="name2">
 	    <label for="joueur2">Nom du joueur 2 : </label>
-	    <input type="text" id="joueur2" name="joueur2"><pre>
+	    <input type="text" id="joueur2" name="joueur2">
     </div>
 		
 	<input type="submit" value="Valider">

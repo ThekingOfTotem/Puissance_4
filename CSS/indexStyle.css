@@ -55,7 +55,13 @@
      margin-right: auto
  }
 
- #names{
+ #name1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ #name2{
     display: flex;
     align-items: center;
     justify-content: center;
