@@ -1,15 +1,13 @@
 /* style grille et cases*/
 
-h1{
-    display: block;
-    width: auto;
-    height: auto;
-}
+h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
 
 #jeu{
     width: 600px;
     height: 530px;
-
 }
 
 #ma-grille {
