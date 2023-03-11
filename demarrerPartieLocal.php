@@ -17,7 +17,7 @@
 	    <input type="text" id="joueur1" name="joueur1"><pre>
 
 	    <label for="joueur2">Nom du joueur 2 : </label>
-	    <input type="text" id="joueur2" name="joueur2"><br>
+	    <input type="text" id="joueur2" name="joueur2"><pre>
     </div>
 		
 	<input type="submit" value="Valider">
