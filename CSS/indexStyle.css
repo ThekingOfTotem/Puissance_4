@@ -12,7 +12,9 @@
 
  #retour{
     font-size: 15px !important;
+    display: flex;
     align-items: left;
+    justify-content: left;
  }
  
  #jaune {
