@@ -6,32 +6,28 @@
 </head>
 
 <style>
-    .bouttonred {
-        background-color: red;
-        font-size: 24px;
-        border-radius: 12px;
+    /* Styles pour les boutons */
+    button {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-right: 10px;
     }
-    
-    .bouttonyel {
+
+    button:nth-child(1) {
         background-color: yellow;
-        font-size: 24px;
-        border-radius: 12px;
+        color: black;
     }
 </style>
 
 <body>
-
     <p>Choisissez votre mode de jeu :</p>
-    <button onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
-    <button onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
-
-    <!--<form method="get" action="page1.php" class=bouttonred>
-        <input type="submit" value="Jeu en Ligne">
-    </form>
-
-    <form method="get" action="demarrerPartieLocal.php" class=bouttonyel>
-        <input type="submit" value="Jeu Local"> 
-    </form> -->
+	<button onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
+	<button onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
 </body>
 
 </html>
