@@ -8,6 +8,7 @@
      font-size: 30px;
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      cursor: pointer;
+     align-items: center;
  }
 
  .retour{
@@ -16,12 +17,10 @@
  
  .jaune {
      background-color: yellow;
-     margin-left: 500px;
  }
  
  .rouge {
      background-color: red;
-     margin-left: 150px;
  }
  
  html,
