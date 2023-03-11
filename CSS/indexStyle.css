@@ -8,16 +8,16 @@
      font-size: 18px;
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      cursor: pointer;
-     margin-right: auto;
-     margin-left: auto;
  }
  
  .jaune {
      background-color: yellow;
+     margin-left: 200px;
  }
  
  .rouge {
      background-color: red;
+     margin-left: 50px;
  }
  
  html,
