@@ -70,5 +70,15 @@
 
  input[type=text]{
     border-radius: 10px;
-    font-size: 40px;
+    font-size: 35px;
+ }
+
+ input[type=submit]{
+    color: black;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 12px;
+     font-size: 30px;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     cursor: pointer;
  }

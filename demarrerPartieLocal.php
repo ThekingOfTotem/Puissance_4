@@ -13,8 +13,7 @@
 <form method="get" action="partieLocal.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
-	    <label for="joueur1">Nom du joueur 1 : </label>
-	    <input type="text" id="joueur1" name="joueur1">
+	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur 1">
     </div>
 
     <div id="name2">
