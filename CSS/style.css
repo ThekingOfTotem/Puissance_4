@@ -19,6 +19,18 @@
     background-color: white;
 }
 
+.bouton {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: 1px solid black;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: white;
+}
+
 .red {
     background-color: red!important;
 }
