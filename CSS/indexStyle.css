@@ -60,3 +60,7 @@
     align-items: center;
     justify-content: center;
  }
+
+ input[type=text]{
+    border-radius: 10px;
+ }
