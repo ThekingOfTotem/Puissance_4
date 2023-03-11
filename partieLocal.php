@@ -29,7 +29,7 @@
         echo "<button data-colonne=".$colonne." class=Bouton ></button>";
       }
 
-      echo "<div id=ma-grille>";
+      echo "<div id=ma-grille class=element-centre>";
 
       for ($ligne = 0; $ligne < 6; $ligne++) {
         for ($colonne = 0; $colonne < 7; $colonne++) {
