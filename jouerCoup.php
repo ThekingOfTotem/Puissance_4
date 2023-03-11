@@ -37,11 +37,11 @@ function jouerCoup($grille,$col){
                 $position = $i;
                 if($_SESSION["tour"]=="Joueur1"){
                     $grille[$i][$col]=1;
-                    $_SESSION["tour"]=="Joueur2";
+                    $_SESSION["tour"]="Joueur2";
                     exit;
                 }else{
                     $grille[$i][$col]=2;
-                    $_SESSION["tour"]=="Joueur1";
+                    $_SESSION["tour"]="Joueur1";
                     exit;
                 }
             }  
@@ -54,12 +54,13 @@ function jouerCoup($grille,$col){
 function verifDroit($grille,$position,$col,$tour){
     $cpt=0;
     if($col+3 <=6){
-        for($i=0;$i<3;$i++){
+        for($i=0;$i<4;$i++){
             if($tour == "Joueur1"){
                 if($grille[$position][$col+$i]==1){
                     $cpt++;
                 }else{
-                    exit;
+                    return false;
+                    
                 }
                 if($cpt == 4){
                     return true;
@@ -68,7 +69,8 @@ function verifDroit($grille,$position,$col,$tour){
                 if($grille[$position][$col+$i]==2){
                     $cpt++;
                 }else{
-                    exit;
+                    return false;
+                    
                 }
                 if($cpt == 4){
                     return true;
