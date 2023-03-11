@@ -27,7 +27,7 @@
     <?php
       echo "<div id=jeu class=element-centre>";
       echo "<div id=mes-boutons >";
-      for ($colonne = 0; $colonne < 7; $colonne++) {
+      for ($colonne = 1; $colonne <=7 ; $colonne++) {
         echo "<button data-colonne=".$colonne." class=Bouton onclick='traiterClic($colonne)'>$colonne</button>";
       }
       echo "</div>";
