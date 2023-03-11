@@ -8,15 +8,17 @@
 </head>
 
 <body>
-<button class="Retour" onclick="window.location.href='index.html'">Retour Menu</button>
+<button id="retour" onclick="window.location.href='index.html'">Retour Menu</button>
 
 <form method="get" action="partieLocal.php">
     <!--On demande le nom des joueurs-->
-	<label for="joueur1">Nom du joueur 1 : </label>
-	<input type="text" id="joueur1" name="joueur1"><br>
+    <div id="names">
+	    <label for="joueur1">Nom du joueur 1 : </label>
+	    <input type="text" id="joueur1" name="joueur1"><br>
 		
-	<label for="joueur2">Nom du joueur 2 : </label>
-	<input type="text" id="joueur2" name="joueur2"><br>
+	    <label for="joueur2">Nom du joueur 2 : </label>
+	    <input type="text" id="joueur2" name="joueur2"><br>
+    </div>
 		
 	<input type="submit" value="Valider">
 </form>
