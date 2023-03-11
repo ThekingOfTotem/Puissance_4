@@ -7,6 +7,7 @@
 
 <style>
     /* Styles pour les boutons */
+    
     button {
         color: blue;
         padding: 10px 20px;
@@ -17,32 +18,31 @@
         margin-right: auto;
         margin-left: auto;
     }
-
-    .jaune{
+    
+    .jaune {
         background-color: yellow;
     }
-
-    .rouge{
+    
+    .rouge {
         background-color: red;
     }
-
-    body{
-        background-color: blue;
+    
+    body {
+        background: linear-gradient(45deg, blue, red);
     }
-
+    
     IMG.displayed {
         display: block;
         margin-left: auto;
-        margin-right: auto 
+        margin-right: auto
     }
-
 </style>
 
 <body>
     <IMG class="displayed" src="logo.png">
     <p>Choisissez votre mode de jeu :</p>
-	<button class = "jaune" onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
-	<button class = "rouge" onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
+    <button class="jaune" onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
+    <button class="rouge" onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
 </body>
 
 </html>
