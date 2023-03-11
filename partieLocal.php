@@ -22,11 +22,11 @@
     $_SESSION["grille"]=$grille;
     ?>
 
-    <h1>Ma grille :</h1>
+    <h1 class="element-centre">Ma grille :</h1>
     
     <?php
       for ($colonne = 0; $colonne < 7; $colonne++) {
-        echo "<button data-colonne=".$colonne." class=Bouton ></button>";
+        echo "<button data-colonne=".$colonne." class=Bouton class=element-centre></button>";
       }
 
       echo "<div id=ma-grille class=element-centre>";
