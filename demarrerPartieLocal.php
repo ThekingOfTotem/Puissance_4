@@ -9,6 +9,7 @@
 
 <body>
 <button class="Retour" onclick="window.location.href='index.html'">Retour Menu</button>
+
 <form method="get" action="partieLocal.php">
     <!--On demande le nom des joueurs-->
 	<label for="joueur1">Nom du joueur 1 : </label>

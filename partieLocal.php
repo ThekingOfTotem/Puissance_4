@@ -16,6 +16,7 @@
     $_SESSION["nomJoueur1"] = $_GET["joueur1"];
     $_SESSION["nomJoueur2"] = $_GET["joueur2"];
     $_SESSION["tour"]="Joueur1";
+    
 
     $grille = array_fill(0, 6, array_fill(0, 7, 0));
 
@@ -28,7 +29,8 @@
       echo "<div id=jeu class=element-centre>";
       echo "<div id=mes-boutons >";
       for ($colonne = 1; $colonne <=7 ; $colonne++) {
-        echo "<button data-colonne=".$colonne." class=Bouton onclick='traiterClic($colonne)'>$colonne</button>";
+      
+      echo "<button data-colonne=".$colonne." data-joueur=".$_SESSION["tour"]."class=Bouton onclick='traiterClic(this)'>$colonne</button>";
       }
       echo "</div>";
 
