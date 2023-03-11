@@ -18,8 +18,7 @@
     </div>
 
     <div id="name2">
-	    <label for="joueur2">Nom du joueur 2 : </label>
-	    <input type="text" id="joueur2" name="joueur2">
+	    <input type="text" id="joueur2" name="joueur2" placeholder="Nom du joueur 2">
     </div>
 		
 	<input type="submit" value="Valider">
