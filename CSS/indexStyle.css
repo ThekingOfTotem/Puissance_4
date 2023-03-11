@@ -16,10 +16,12 @@
  
  .jaune {
      background-color: yellow;
+     margin-right: 10px;
  }
  
  .rouge {
      background-color: red;
+     margin-left: 10px;
  }
  
  html,
