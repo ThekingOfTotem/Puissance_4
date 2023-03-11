@@ -49,6 +49,10 @@ button {
 }
 
 button:hover{
+    background-color: #97a9cf;
+}
+
+button:active{
     background-color:gray;
 }
 
