@@ -1,5 +1,10 @@
 /* style grille et cases*/
 
+.h1{
+    width: auto;
+    height: auto;
+}
+
 #jeu{
     width: 600px;
     height: 530px;
