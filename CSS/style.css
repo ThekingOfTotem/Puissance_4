@@ -1,4 +1,4 @@
-/* style pour les jetons */
+/* style grille et cases*/
 
 #ma-grille {
     width: 600px;
@@ -32,6 +32,12 @@
 
 }
 
+.element-centre{
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}
+
+/* style pour les jetons */
 .red {
     background-color: red!important;
 }
@@ -40,7 +46,3 @@
     background-color: yellow!important;
 }
 
-.element-centre{
-    margin-left: auto;
-    margin-right: auto;
-}
