@@ -1,5 +1,6 @@
 <?php
-session_start();
+//session_start();
+$grille=$_SESSION["grille"];
 
 $col = $_SESSION["col"];
 $tour = $_SESSION["tour"];
@@ -310,3 +311,5 @@ function changementTour($grille,$tour,$col,$position){
         return $tour;
     }
 }
+echo $col;
+coupPossible($grille, $col);
