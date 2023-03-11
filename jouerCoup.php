@@ -31,9 +31,10 @@ function grilleRemplie($grille)
 }
 
 //On joue le coup
-$position = 0;
+
 function jouerCoup($grille, $col)
 {
+  global  $position;
     //Si le coup est possible
     if (coupPossible($grille, $col)) {
         for ($i = 5; $i >= 0; $i--) {
@@ -297,3 +298,15 @@ function victoire($grille, $position, $col, $tour)
     $_SESSION["grille"] = $grille;
 }
 //
+
+function changementTour($grille,$tour,$col,$position){
+    
+    if($tour == "Joueur1" && victoire($_SESSION["grille"] ,$position,$col,$tour)== false){
+        $tour =="Joueur2";
+        return $tour;
+    }
+    if($tour == "Joueur2"){
+        $tour =="Joueur1";
+        return $tour;
+    }
+}
