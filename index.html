@@ -8,7 +8,6 @@
 <style>
     /* Styles pour les boutons */
     button {
-        background-color: blue;
         color: white;
         padding: 10px 20px;
         border: none;
@@ -18,12 +17,20 @@
         margin-right: 10px;
     }
 
+    .jaune{
+        background-color: yellow;
+    }
+
+    .jaune{
+        background-color: blue;
+    }
+
 </style>
 
 <body>
     <p>Choisissez votre mode de jeu :</p>
-	<button onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
-	<button onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
+	<button class = "jaune" onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
+	<button class = "bleu" onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
 </body>
 
 </html>
