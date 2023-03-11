@@ -27,9 +27,8 @@
  #titre{
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: block;
-     margin-left: auto;
-     margin-right: auto
+    margin-left: auto;
+    margin-right: auto;
  }
  
  body {
