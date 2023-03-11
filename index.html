@@ -29,9 +29,16 @@
         background-color: blue;
     }
 
+    IMG.displayed {
+        display: block;
+        margin-left: auto;
+        margin-right: auto 
+    }
+
 </style>
 
 <body>
+    <IMG class="displayed" src="logo.jpeg">
     <p>Choisissez votre mode de jeu :</p>
 	<button class = "jaune" onclick="window.location.href='demarrerPartieLocal.php'">Jeu Local</button>
 	<button class = "rouge" onclick="window.location.href='jeu_en_ligne.php'">Jeu en Ligne</button>
