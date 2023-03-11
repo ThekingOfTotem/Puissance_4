@@ -8,7 +8,6 @@
      font-size: 30px;
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      cursor: pointer;
-     align-items: center;
  }
 
  .retour{
@@ -26,6 +25,10 @@
  html,
  body {
      height: 100%;
+ }
+
+ #block_button{
+    align-items: center;
  }
 
  #titre{
