@@ -9,6 +9,10 @@
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      cursor: pointer;
  }
+
+ .retour{
+    font-size: 20px;
+ }
  
  .jaune {
      background-color: yellow;
@@ -29,8 +33,7 @@
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 40px;
-    margin-left: 500px;
-    margin-right: auto;
+    text-align: center;
  }
  
  body {
