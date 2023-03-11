@@ -1,8 +1,12 @@
 /* style grille et cases*/
 
-#ma-grille {
+#jeu{
     width: 600px;
     height: 530px;
+
+}
+
+#ma-grille {
     background-color: blue;
 }
 
