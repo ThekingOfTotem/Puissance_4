@@ -5,6 +5,7 @@ function traiterClic(nc) {
 }
 
 function traiterRepServ(data) {
+    console.log("colonne" + nc);
     //data.grille
     //data.resultat
     //->afficher

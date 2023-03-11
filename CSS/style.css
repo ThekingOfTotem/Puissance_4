@@ -30,7 +30,7 @@ h1 {
     background-color: white;
 }
 
-.Bouton {
+button {
     display: inline-block;
     width: 75px;
     height: 75px;
@@ -46,6 +46,14 @@ h1 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     
 
+}
+
+button:hover{
+    background-color: #97a9cf;
+}
+
+button:active{
+    background-color:gray;
 }
 
 .element-centre{
