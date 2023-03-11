@@ -2,9 +2,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Puissance 4</title>
+    <title>Puissance 4 Local</title>
     <!--lien avec le css-->
     <link href="CSS/style.css" rel="stylesheet"/>
+    <script src="JS/jquery-3.6.3.min.js"></script>
+    <script src="JS/action.js"></script>
+
 </head>
 
 <body>
@@ -22,7 +25,10 @@
     <h1>Ma grille :</h1>
     <div id="ma-grille">
     <?php
-    
+      for ($colonne = 0; $colonne < 6; $colonne++) {
+        echo "<button data-colonne=".$colonne." class=Bouton ></button>";
+      }
+
       for ($ligne = 0; $ligne < 6; $ligne++) {
         for ($colonne = 0; $colonne < 7; $colonne++) {
             $numCase = $ligne*6+$colonne;
