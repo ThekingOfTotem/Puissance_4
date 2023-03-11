@@ -23,6 +23,11 @@
  body {
      height: 100%;
  }
+
+ #titre{
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
  
  body {
      background: linear-gradient(45deg, rgb(92, 92, 241), rgb(243, 95, 95));
