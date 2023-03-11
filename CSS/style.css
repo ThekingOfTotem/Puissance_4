@@ -1,19 +1,20 @@
 /* style grille et cases*/
 
-h1{
-    display: block;
-    width: auto;
-    height: auto;
-}
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 
 #jeu{
     width: 600px;
     height: 530px;
-
 }
 
 #ma-grille {
     background-color: blue;
+    border-radius: 3%;
 }
 
 .case {
