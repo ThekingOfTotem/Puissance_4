@@ -10,16 +10,19 @@
      cursor: pointer;
  }
 
- .retour{
-    font-size: 20px;
+ #retour{
+    font-size: 15px !important;
+    display: flex;
+    align-items: left;
+    justify-content: left;
  }
  
- .jaune {
+ #jaune {
      background-color: yellow;
      margin-right: 10px;
  }
  
- .rouge {
+ #rouge {
      background-color: red;
      margin-left: 10px;
  }
