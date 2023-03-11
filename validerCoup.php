@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include '/jouerCoup.php';
-
+include 'jouerCoup.php';
+coupPossible($grille, $col);
 
 
 ?>
