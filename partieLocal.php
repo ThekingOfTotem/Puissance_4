@@ -25,10 +25,11 @@
     <h1 class="element-centre">Ma grille :</h1>
     
     <?php
+      echo "<div id=mes-boutons class=element-centre>";
       for ($colonne = 0; $colonne < 7; $colonne++) {
-        echo "<button data-colonne=".$colonne." class=Bouton element-centre></button>";
+        echo "<button data-colonne=".$colonne." class=Bouton></button>";
       }
-
+      echo "</div>";
       echo "<div id=ma-grille class=element-centre>";
 
       for ($ligne = 0; $ligne < 6; $ligne++) {
