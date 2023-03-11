@@ -2,6 +2,7 @@
 session_start();
 
 $col = $_SESSION["col"];
+$tour = $_SESSION["tour"];
 //$position;
 
 
@@ -118,14 +119,14 @@ function verifHaut($grille, $position, $col, $tour)
     $cmp = 0;
     if ($position + 3 <= 5) {
         for ($i = 0; $i < 4; $i++) {
-            if ($_SESSION["tour"] == "Joueur1") { //si le joueur 1 joue
+            if ($tour == "Joueur1") { //si le joueur 1 joue
                 if ($grille[$position + $i][$col] == 1) {
                     $cmp++;
                 } else {
                     return false;
                 }
             }
-            if ($_SESSION["tour"] == "Joueur2") { //si le joueur 2 joue
+            if ($tour == "Joueur2") { //si le joueur 2 joue
                 if ($grille[$position + $i][$col] == 2) {
                     $cmp++;
                 } else {
