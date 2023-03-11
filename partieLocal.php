@@ -26,10 +26,10 @@
     
     <?php
       for ($colonne = 0; $colonne < 7; $colonne++) {
-        echo "<button data-colonne=".$colonne." class='Bouton' class='element-centre'></button>";
+        echo "<button data-colonne=".$colonne." class=Bouton element-centre></button>";
       }
 
-      echo "<div id=ma-grille class='element-centre'>";
+      echo "<div id=ma-grille class=element-centre>";
 
       for ($ligne = 0; $ligne < 6; $ligne++) {
         for ($colonne = 0; $colonne < 7; $colonne++) {
