@@ -84,19 +84,19 @@ function verifDroit($grille,$position,$col,$tour){
 function verifGauche($grille,$position,$col,$tour){
     $cmp=0;
     if($col-3 >= 0){
-        for ($i = 0; $i<3; $i++){
-            if ($_SESSION["tour"]=="Joueur1"){ //si le joueur 1 joue
+        for ($i = 0; $i<4; $i++){
+            if ($tour=="Joueur1"){ //si le joueur 1 joue
                 if($grille[$position][$col-$i]==1){
                     $cmp++;
                 }else{
-                    exit;
+                    return false;
                 }
             }
-            if ($_SESSION["tour"]=="Joueur2"){ //si le joueur 2 joue
+            if ($tour=="Joueur2"){ //si le joueur 2 joue
                 if($grille[$position][$col-$i]==2){
                     $cmp++;
                 }else{
-                    exit;
+                    return false;
                 }
             }
         }
@@ -111,19 +111,19 @@ function verifGauche($grille,$position,$col,$tour){
 function verifHaut($grille,$position,$col,$tour){
     $cmp=0;
     if($position+3 <= 5){
-            for ($i = 0; $i<3; $i++){
+            for ($i = 0; $i<4; $i++){
                 if ($_SESSION["tour"]=="Joueur1"){ //si le joueur 1 joue
                     if($grille[$position+$i][$col]==1){
                         $cmp++;
                     }else{
-                        exit;
+                        return false;
                     }
                 }
                 if ($_SESSION["tour"]=="Joueur2"){ //si le joueur 2 joue
                     if($grille[$position+$i][$col]==2){
                         $cmp++;
                     }else{
-                        exit;
+                       return false;
                     }
                 }
             }
@@ -136,27 +136,24 @@ function verifHaut($grille,$position,$col,$tour){
 }
 
 function verifBas($grille,$position,$col,$tour){
-    $cpt=0;
+    $cmp=0;
     if($position-3 >=0){
-        for($i=0;$i<3;$i++){
+        for($i=0;$i<4;$i++){
             if($tour == "Joueur1"){
                 if($grille[$position-$i][$col]==1){
-                    $cpt++;
+                    $cmp++;
                 }else{
-                    exit;
-                }
-                if($cpt == 4){
-                    return true;
+                    return false;
                 }
             }else{
                 if($grille[$position-$i][$col]==2){
-                    $cpt++;
+                    $cmp++;
                 }else{
-                    exit;
+                    return false;
                 }
-                if($cpt == 4){
-                    return true;
-                }
+            }
+            if($cmp == 4){
+                return true;
             }
         }   
     }
