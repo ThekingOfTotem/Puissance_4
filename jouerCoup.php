@@ -1,7 +1,7 @@
 <?php
 session_start();
 $grille = $_SESSION["grille"];
-$tour = $_SESSION["joueur"];
+$tour = $_SESSION["tour"];
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $col = $_GET["col"];
@@ -40,9 +40,11 @@ function grilleRemplie()
 
 //On joue le coup
 
-function jouerCoup($grille, $col)
+function jouerCoup()
 {
-  global  $position;
+  global $position;
+  global $grille;
+  $col=$_POST["col"];
     //Si le coup est possible
     if (coupPossible($grille, $col)) {
         for ($i = 5; $i >= 0; $i--) {
@@ -51,12 +53,15 @@ function jouerCoup($grille, $col)
                 if ($_SESSION["tour"] == "Joueur1") {
                     $grille[$i][$col] = 1;
                     $_SESSION["tour"] = "Joueur2";
-                    echo $_SESSION["tour"];
+                    $_SESSION["grille"] = $grille;
+                    $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position);
+                    echo json_encode($data);
                     exit;
                 } else {
                     $grille[$i][$col] = 2;
                     $_SESSION["tour"] = "Joueur1";
-                    echo $_SESSION["tour"];
+                    $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position);
+                    echo json_encode($data);
                     exit;
                 }
             }

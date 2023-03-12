@@ -13,8 +13,8 @@ function traiterClic(button) {
             joueur: j, col: nc
         },
         success: function(response) {
-          data=response.data //mettre à jour le nom du joueur
-          document.getElementById("nomJoueur").textContent=data
+          //mettre à jour le nom du joueur
+          console.log(response)
           traiterCoup()
         }
       });
@@ -31,7 +31,22 @@ function traiterCoup() {
           if (response == true) {
             console.log("partie terminée");
           } else {
-            jouerCoup($grille,nc);
+            $.ajax({
+                url: "jouerCoup.php",
+                type: "POST",
+                data: {
+                    action:"jouerCoup", col: nc
+                },
+                success: function(response) {
+                    data = JSON.parse(response)
+                    document.getElementById("nomJoueur").textContent=data["nomJoueur"]
+                    grille=data["grille"]
+                    position=data["position"]
+                    var div = document.querySelector('[data-ligne="'+position+'"][data-colonne="'+nc+'"]');
+                    div.classList.add(data["couleur"]);
+                    console.log(data);
+                }
+              });
           }
         }
       });

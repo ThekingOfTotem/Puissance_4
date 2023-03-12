@@ -1,12 +1,12 @@
 <?php
 session_start();
-$grille = $_GET["grille"];
+$grille = $_SESSION["grille"];
 $col = $_GET["col"];
-$tour = $_SESSION["joueur"];
+$tour = $_SESSION["tour"];
 include 'jouerCoup.php';
 
 coupPossible($grille, $col);
 echo $tour;
-
+print_r($_SESSION);
 
 ?>
