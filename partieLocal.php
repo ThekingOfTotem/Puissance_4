@@ -26,7 +26,7 @@
     <h1 class="element-centre">Ma grille :</h1>
     
     <?php
-      echo "<h2>".$_SESSION["tour"]."</h2>";
+      echo "<h2 class=element-centre>".$_SESSION["tour"]."</h2>";
       echo "<div id=jeu class=element-centre>";
       echo "<div id=mes-boutons >";
       for ($colonne = 1; $colonne <=7 ; $colonne++) {
