@@ -1,6 +1,7 @@
 var nc, j;
 
 function traiterClic(button) {
+    console.log(" traiterClic ");
     nc = button.getAttribute("data-colonne");
     j = button.getAttribute("data-joueur");
     //appeler le serv
