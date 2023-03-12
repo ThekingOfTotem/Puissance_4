@@ -26,11 +26,12 @@
     <h1 class="element-centre">Ma grille :</h1>
     
     <?php
+      echo "<h2 id=nomJoueur class=element-centre style=z-index:2>".$_SESSION["nomJoueur1"]."</h2>";
       echo "<div id=jeu class=element-centre>";
       echo "<div id=mes-boutons >";
-      for ($colonne = 1; $colonne <=7 ; $colonne++) {
-      
-      echo "<button data-colonne=".$colonne." data-joueur=".$_SESSION["tour"]."class=Bouton onclick='traiterClic(this)'>$colonne</button>";
+      for ($colonne = 0; $colonne <=6 ; $colonne++) {
+        $num=$colonne+1;
+        echo "<button data-colonne=".$colonne." class=Bouton onclick='traiterClic(this)'>$num</button>";
       }
       echo "</div>";
 
@@ -44,6 +45,7 @@
       }
       echo "</div>";
       echo "</div>";
+
     ?>
     
     </div>

@@ -1,6 +1,22 @@
 /* style grille et cases*/
 
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(45deg, rgb(92, 92, 241), rgb(243, 95, 95));
+}
+
 h1 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2 {
     text-align: center;
     margin: 0 auto;
     padding: 1%;

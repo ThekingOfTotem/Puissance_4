@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<button id="retour" onclick="window.location.href='index.html'">Retour Menu</button>
+<IMG class="displayed" src="logo.png">
 
 <form method="get" action="partieLocal.php">
     <!--On demande le nom des joueurs-->
@@ -20,8 +20,9 @@
 	    <input type="text" id="joueur2" name="joueur2" placeholder="Nom du joueur 2">
     </div>
 		
-	<input type="submit" value="Valider">
+	<input id="val" type="submit" value="Valider">
 </form>
+<button id="retour" onclick="window.location.href='index.html'">Retour Menu</button>
 
 
 </body>
