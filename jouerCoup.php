@@ -1,9 +1,9 @@
 <?php
-//session_start();
-$grille=$_POST["grille"];
+session_start();
+$grille=$_SESSION["grille"];
 
 $col = $_GET["col"];
-$tour = $_GET["joueur"];
+$tour = $_SESSION["joueur"];
 //$position;
 //Verifier l'autorisation du coup 
 //On vérifie si la colonne n'est pas vide
