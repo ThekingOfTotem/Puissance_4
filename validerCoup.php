@@ -2,7 +2,7 @@
 session_start();
 $grille = $_GET["grille"];
 $col = $_GET["col"];
-$tour = $_GET["joueur"];
+$tour = $_SESSION["joueur"];
 include 'jouerCoup.php';
 
 coupPossible($grille, $col);

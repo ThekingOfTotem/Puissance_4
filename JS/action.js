@@ -5,7 +5,19 @@ function traiterClic(button) {
     nc = button.getAttribute("data-colonne");
     j = button.getAttribute("data-joueur");
     //appeler le serv
-    $.get("validerCoup.php", { joueur: j, col: nc }, traiterCoup);
+    //$.get("validerCoup.php", { joueur: j, col: nc }, traiterCoup);
+    $.ajax({
+        url: "validerCoup.php",
+        type: "GET",
+        data: {
+            joueur: j, col: nc
+        },
+        success: function(response) {
+          data=response.data //mettre à jour le nom du joueur
+          document.getElementById("nomJoueur").textContent=data
+          traiterCoup()
+        }
+      });
 }
 
 function traiterCoup() {
@@ -13,11 +25,11 @@ function traiterCoup() {
         url: "jouerCoup.php",
         type: "POST",
         data: {
-          action: "grilleRempli"
+          action: "grilleRemplie"
         },
         success: function(response) {
           if (response == true) {
-            console.log("partie gagnée");
+            console.log("partie terminée");
           } else {
             jouerCoup($grille,nc);
           }

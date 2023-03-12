@@ -1,20 +1,29 @@
 <?php
 session_start();
-$grille=$_SESSION["grille"];
-
-$col = $_GET["col"];
+$grille = $_SESSION["grille"];
 $tour = $_SESSION["joueur"];
-//$position;
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $col = $_GET["col"];
+    
+}else{
+    $action = $_POST["action"];
+    call_user_func($action);
+}
+
+$position;
 //Verifier l'autorisation du coup 
 //On vérifie si la colonne n'est pas vide
+
 function coupPossible($grille, $col)
 {
     return $grille[0][$col] == 0;
 }
 
 //On vérifie si la grille est remplie 
-function grilleRemplie($grille)
+function grilleRemplie()
 {
+    global $grille;
     $cmp = 0;
     for ($i = 0; $i < 7; $i++) {
         if ($grille[0][$i] != 0) {
@@ -42,10 +51,12 @@ function jouerCoup($grille, $col)
                 if ($_SESSION["tour"] == "Joueur1") {
                     $grille[$i][$col] = 1;
                     $_SESSION["tour"] = "Joueur2";
+                    echo $_SESSION["tour"];
                     exit;
                 } else {
                     $grille[$i][$col] = 2;
                     $_SESSION["tour"] = "Joueur1";
+                    echo $_SESSION["tour"];
                     exit;
                 }
             }
