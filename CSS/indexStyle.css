@@ -58,3 +58,9 @@
  #names {
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
  }
+ 
+ input {
+     padding: 10px 20px;
+     border: none;
+     border-radius: 12px;
+ }
