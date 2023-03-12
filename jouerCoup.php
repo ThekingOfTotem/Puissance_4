@@ -57,9 +57,10 @@ function jouerCoup()
                     $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position);
                     echo json_encode($data);
                     exit;
-                } else {
+                } if ($_SESSION["tour"] == "Joueur2"){
                     $grille[$i][$col] = 2;
                     $_SESSION["tour"] = "Joueur1";
+                    $_SESSION["grille"] = $grille;
                     $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position);
                     echo json_encode($data);
                     exit;
@@ -303,12 +304,11 @@ function verifBasGauche($grille, $position, $col, $tour)
 //si une des verifs est ok, on valide la victoire et pousse la grille 
 function victoire($grille, $position, $col, $tour)
 {
-    if (verifBas($grille, $position, $col, $tour) || verifHaut($grille, $position, $col, $tour) || verifGauche($grille, $position, $col, $tour) || verifDroit($grille, $position, $col, $tour)) {
-        if (verifBasDroit($grille, $position, $col, $tour) || verifBasGauche($grille, $position, $col, $tour) || verifHautDroit($grille, $position, $col, $tour) || verifHautGauche($grille, $position, $col, $tour)) {
-            return true;
-        } else {
-            return false;
-        }
+    if (verifBas($grille, $position, $col, $tour) || verifHaut($grille, $position, $col, $tour) || verifGauche($grille, $position, $col, $tour) || verifDroit($grille, $position, $col, $tour) || verifBasDroit($grille, $position, $col, $tour) || verifBasGauche($grille, $position, $col, $tour) || verifHautDroit($grille, $position, $col, $tour) || verifHautGauche($grille, $position, $col, $tour)) {
+        return true;
+    } else {
+        return false;
+        
     }
     $_SESSION["grille"] = $grille;
 }

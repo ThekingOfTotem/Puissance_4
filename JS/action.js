@@ -52,7 +52,7 @@ function traiterCoup() {
       });
 }
 
-function traiterRepServ(data) {
+function traiterVictoire(data) {
     console.log("colonne " + nc);
     console.log("joueur " + j);
     console.log(data);
