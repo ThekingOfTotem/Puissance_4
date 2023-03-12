@@ -7,6 +7,13 @@ h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+h2 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 1%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 #jeu {
     width: 600px;
     height: 530px;
