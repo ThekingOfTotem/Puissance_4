@@ -30,8 +30,8 @@
       echo "<div id=jeu class=element-centre>";
       echo "<div id=mes-boutons >";
       for ($colonne = 0; $colonne <=6 ; $colonne++) {
-      
-      echo "<button data-colonne=".$colonne." data-joueur=".$_SESSION["tour"]." class=Bouton onclick='traiterClic(this)'>$colonne</button>";
+        $num=$colonne+1;
+        echo "<button data-colonne=".$colonne." data-joueur=".$_SESSION["tour"]." class=Bouton onclick='traiterClic(this)'>$num</button>";
       }
       echo "</div>";
 
