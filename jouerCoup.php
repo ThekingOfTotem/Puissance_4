@@ -309,5 +309,3 @@ function changementTour($grille,$tour,$col,$position){
         return $tour;
     }
 }
-echo $col;
-coupPossible($grille, $col);
