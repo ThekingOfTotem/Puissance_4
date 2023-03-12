@@ -9,12 +9,12 @@
      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      cursor: pointer;
  }
-
- #retour{
-    font-size: 15px !important;
-    display: flex;
-    align-items: left;
-    justify-content: left;
+ 
+ #retour {
+     font-size: 15px !important;
+     display: flex;
+     align-items: left;
+     justify-content: left;
  }
  
  #jaune {
@@ -31,18 +31,18 @@
  body {
      height: 100%;
  }
-
- #block_button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ 
+ #block_button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
  }
-
- #titre{
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
-    text-align: center;
+ 
+ #titre {
+     color: white;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 40px;
+     text-align: center;
  }
  
  body {
@@ -54,3 +54,5 @@
      margin-left: auto;
      margin-right: auto
  }
+ 
+ #names {}
