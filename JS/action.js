@@ -6,6 +6,7 @@ function traiterClic(button) {
     //appeler le serv
     $.get("validerCoup.php", { joueur: j, col: nc }, traiterRepServ);
 
+
 }
 
 function traiterRepServ(data) {

@@ -1,12 +1,10 @@
 <?php
 //session_start();
-$grille=$_SESSION["grille"];
+$grille=$_POST["grille"];
 
-$col = $_SESSION["col"];
-$tour = $_SESSION["tour"];
+$col = $_GET["col"];
+$tour = $_GET["joueur"];
 //$position;
-
-
 //Verifier l'autorisation du coup 
 //On vérifie si la colonne n'est pas vide
 function coupPossible($grille, $col)
