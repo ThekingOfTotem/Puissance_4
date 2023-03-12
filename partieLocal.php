@@ -5,6 +5,7 @@
     <title>Puissance 4 Local</title>
     <!--lien avec le css-->
     <link href="CSS/style.css" rel="stylesheet"/>
+    <link href="CSS/style.css" rel="stylesheet"/>
     <script src="JS/jquery-3.6.3.min.js"></script>
     <script src="JS/action.js"></script>
 
@@ -44,7 +45,7 @@
       }
       echo "</div>";
       echo "</div>";
-      
+
     ?>
     
     </div>
