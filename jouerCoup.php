@@ -67,8 +67,14 @@ function jouerCoup()
                 }
             }
         }
+        
     } else {
-        echo "Choisissez une autre colonne";
+        echo "<script>alert('Choisir une autre colonne');</script>";
+    }
+    if(victoire($_SESSION["grille"],$position,$col,$_SESSION["tour"])){
+        echo json_encode(true);
+        sleep(2);
+        header("Location:demarrerPartieLocal");
     }
 }
 
@@ -305,12 +311,11 @@ function verifBasGauche($grille, $position, $col, $tour)
 function victoire($grille, $position, $col, $tour)
 {
     if (verifBas($grille, $position, $col, $tour) || verifHaut($grille, $position, $col, $tour) || verifGauche($grille, $position, $col, $tour) || verifDroit($grille, $position, $col, $tour) || verifBasDroit($grille, $position, $col, $tour) || verifBasGauche($grille, $position, $col, $tour) || verifHautDroit($grille, $position, $col, $tour) || verifHautGauche($grille, $position, $col, $tour)) {
-        return true;
+        echo true;
     } else {
-        return false;
+        echo false;
         
     }
-    $_SESSION["grille"] = $grille;
 }
 //
 
