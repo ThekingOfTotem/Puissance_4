@@ -52,10 +52,14 @@ function traiterCoup() {
                         url: "jouerCoup.php",
                         type: "POST",
                         data: {
-                        action: "victoire", grille, position, nc, nomJoueurOld
+                          "action": "victoire",
+                          "grille":grille,
+                          "position":position, 
+                          "nc":nc, 
+                          "nomJoueurOld":nomJoueurOld
                         },
                         success: function(response){
-                          //response=Boolean(JSON.parse(response));
+                          response=Boolean(JSON.parse(response));
                           console.log(response);
                           if(response=="true"){
                             alert("pouet");

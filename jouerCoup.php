@@ -80,19 +80,20 @@ function jouerCoup()
 
 function verifDroit($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($col + 3 <= 6) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") {
                 if ($grille[$position][$col + $i] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     return false;
                 }
                 
             } else {
                 if ($grille[$position][$col + $i] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     return false;
                 }
@@ -100,83 +101,110 @@ function verifDroit($grille, $position, $col, $tour)
             }
         }
     }
-    if ($cpt == 4) {
-        return true;
-    }else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 function verifGauche($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($col - 3 >= 0) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") { //si le joueur 1 joue
                 if ($grille[$position][$col - $i] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     return false;
                 }
             }
             if ($tour == "Joueur2") { //si le joueur 2 joue
                 if ($grille[$position][$col - $i] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     return false;
                 }
             }
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 function verifHaut($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($position + 3 <= 5) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") { //si le joueur 1 joue
                 if ($grille[$position + $i][$col] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     return false;
                 }
             }
             if ($tour == "Joueur2") { //si le joueur 2 joue
                 if ($grille[$position + $i][$col] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     return false;
                 }
             }
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 function verifBas($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($position - 3 >= 0) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") {
                 if ($grille[$position - $i][$col] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     return false;
                 }
             } else {
                 if ($grille[$position - $i][$col] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     return false;
                 }
@@ -184,27 +212,36 @@ function verifBas($grille, $position, $col, $tour)
             
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 function verifHautDroit($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($position - 3 >=0 && $col + 3 <= 6) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") {
                 if ($grille[$position - $i][$col + $i] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     return false;
                 }
             } else {
                 if ($grille[$position - $i][$col + $i] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     return false;
                 }
@@ -212,29 +249,38 @@ function verifHautDroit($grille, $position, $col, $tour)
             
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
     
 }
 
 function verifHautGauche($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($position - 3 >=0 && $col - 3 >= 0) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") {
                 if ($grille[$position - $i][$col - $i] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     return false;
                 }
                 
             } else {
                 if ($grille[$position - $i][$col - $i] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     return false;
                 }
@@ -242,28 +288,37 @@ function verifHautGauche($grille, $position, $col, $tour)
             }
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 function verifBasDroit($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($position + 3 <=5 && $col + 3 <=6) {
         for ($i = 0; $i < 4; $i++) {
             if ($tour == "Joueur1") {
                 if ($grille[$position + $i][$col + $i] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     exit;
                 }
               
             } else {
                 if ($grille[$position + $i][$col + $i] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     exit;
                 }
@@ -271,28 +326,37 @@ function verifBasDroit($grille, $position, $col, $tour)
             }
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 function verifBasGauche($grille, $position, $col, $tour)
 {
-    $cpt = 0;
+    $cpt1 = 0;
+    $cpt2 = 0;
     if ($position + 3 <= 5 && $col - 3 >= 0) {
         for ($i = 0; $i < 3; $i++) {
             if ($tour == "Joueur1") {
                 if ($grille[$position + $i][$col - $i] == 1) {
-                    $cpt++;
+                    $cpt1++;
                 } else {
                     exit;
                 }
               
             } else {
                 if ($grille[$position + $i][$col - $i] == 2) {
-                    $cpt++;
+                    $cpt2++;
                 } else {
                     exit;
                 }
@@ -300,21 +364,34 @@ function verifBasGauche($grille, $position, $col, $tour)
             }
         }
     }
-    if ($cpt == 4) {
-        return true;
-    } else {
-        return false;
+    if ($tour == "Joueur1") {
+        if ($cpt1 == 4) {
+            return true;
+        }else {
+            return false;
+        }
+    }else{
+        if ($cpt2 == 4) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
 
 //si une des verifs est ok, on valide la victoire et pousse la grille 
-function victoire($grille, $position, $col, $tour)
+function victoire(/*$grille, $position, $col, $tour*/)
 {
+    $grille = $_POST["grille"];;
+    $position = $_POST["position"];
+    $col = $_POST["nc"];
+    $tour = $_POST["nomJoueurOld"];
     if (verifBas($grille, $position, $col, $tour) || verifHaut($grille, $position, $col, $tour) || verifGauche($grille, $position, $col, $tour) || verifDroit($grille, $position, $col, $tour) || verifBasDroit($grille, $position, $col, $tour) || verifBasGauche($grille, $position, $col, $tour) || verifHautDroit($grille, $position, $col, $tour) || verifHautGauche($grille, $position, $col, $tour)) {
-        echo true;
+        echo json_encode(true);
+        exit;
     } else {
-        echo false;
-        
+        echo json_encode(false);
+        exit;
     }
 }
 //
