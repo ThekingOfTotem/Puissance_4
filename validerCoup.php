@@ -5,7 +5,6 @@ $col = $_GET["col"];
 $tour = $_SESSION["tour"];
 include 'jouerCoup.php';
 
-echo $tour;
-print_r($_SESSION);
+
 
 ?>
