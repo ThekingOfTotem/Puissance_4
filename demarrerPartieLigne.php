@@ -5,6 +5,7 @@
     <title>Choix Joueurs</title>
     <!--lien avec le css-->
     <link href="CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
