@@ -52,18 +52,28 @@ function jouerCoup()
                 $position = $i;
                 if ($_SESSION["tour"] == "Joueur1") {
                     $grille[$i][$col] = 1;
-                    $_SESSION["tour"] = "Joueur2";
-                    $_SESSION["grille"] = $grille;
-                    $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position);
-                    echo json_encode($data);
-                    exit;
+                    if(victoire($grille,$position,$col,$_SESSION["tour"])){
+                        echo json_encode(true);
+                        exit;
+                    }else{
+                        $_SESSION["grille"] = $grille;
+                        $_SESSION["tour"] = "Joueur2";
+                        $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position);
+                        echo json_encode($data);
+                        exit;
+                    }
                 } if ($_SESSION["tour"] == "Joueur2"){
                     $grille[$i][$col] = 2;
-                    $_SESSION["tour"] = "Joueur1";
-                    $_SESSION["grille"] = $grille;
-                    $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position);
-                    echo json_encode($data);
-                    exit;
+                    if(victoire($grille,$position,$col,$_SESSION["tour"])){
+                        echo json_encode(true);
+                        exit;
+                    }else{
+                        $_SESSION["tour"] = "Joueur1";
+                        $_SESSION["grille"] = $grille;
+                        $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position);
+                        echo json_encode($data);
+                        exit;
+                    }
                 }
             }
         }
@@ -380,18 +390,16 @@ function verifBasGauche($grille, $position, $col, $tour)
 }
 
 //si une des verifs est ok, on valide la victoire et pousse la grille 
-function victoire(/*$grille, $position, $col, $tour*/)
+function victoire($grille, $position, $col, $tour)
 {
-    $grille = $_POST["grille"];;
+    /*$grille = $_POST["grille"];;
     $position = $_POST["position"];
     $col = $_POST["nc"];
-    $tour = $_POST["nomJoueurOld"];
+    $tour = $_POST["nomJoueurOld"];*/
     if (verifBas($grille, $position, $col, $tour) || verifHaut($grille, $position, $col, $tour) || verifGauche($grille, $position, $col, $tour) || verifDroit($grille, $position, $col, $tour) || verifBasDroit($grille, $position, $col, $tour) || verifBasGauche($grille, $position, $col, $tour) || verifHautDroit($grille, $position, $col, $tour) || verifHautGauche($grille, $position, $col, $tour)) {
-        echo json_encode(true);
-        exit;
+        return true;
     } else {
-        echo json_encode(false);
-        exit;
+        return false;
     }
 }
 //

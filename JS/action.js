@@ -41,14 +41,19 @@ function traiterCoup() {
                 },
                 success: function(response) {
                     data = JSON.parse(response);
-                    nomJoueurOld=document.getElementById("nomJoueur").textContent;
-                    document.getElementById("nomJoueur").textContent=data["nomJoueur"];
-                    grille=data["grille"];
-                    position=data["position"];
-                    var div = document.querySelector('[data-ligne="'+position+'"][data-colonne="'+nc+'"]');
-                    div.classList.add(data["couleur"]);
-                    //console.log(data);
-                    $.ajax({
+                    if(data){
+                      alert("La partie est terminée");
+                      window.location.replace("demarrerPartieLocal.php");
+                    }else{
+                      nomJoueurOld=document.getElementById("nomJoueur").textContent;
+                      document.getElementById("nomJoueur").textContent=data["nomJoueur"];
+                      grille=data["grille"];
+                      position=data["position"];
+                      var div = document.querySelector('[data-ligne="'+position+'"][data-colonne="'+nc+'"]');
+                      div.classList.add(data["couleur"]);
+                      //console.log(data);
+                    }
+                    /*$.ajax({
                         url: "jouerCoup.php",
                         type: "POST",
                         data: {
@@ -66,7 +71,7 @@ function traiterCoup() {
                             window.location.replace("demarrerPartieLocal.php");
                           }
                         }
-                    });
+                    });*/
                 }
               });
           }
