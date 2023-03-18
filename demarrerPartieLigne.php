@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    try{
+        $cnx= new PDO('mysql:host=fafa.kroko.xyz;dbname=aitbouqdir1', "aitbouqdir","crotocu");
+    }catch(PDOException $e){
+        echo "Erreur PDO : ".$e->getMessage()."<br/>";
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 
 <head>
@@ -17,10 +27,7 @@
     <!--On demande le nom des joueurs-->
     <div id="name1">
 	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur 1" required>
-    </div>
-
-    <div id="name2">
-	    <input type="text" id="joueur2" name="joueur2" placeholder="Nom du joueur 2" required>
+        <?php $cnx[]?>
     </div>
 		
 	<input id="val" type="submit" value="Valider">
