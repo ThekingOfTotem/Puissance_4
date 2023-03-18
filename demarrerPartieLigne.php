@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    try{
+        $cnx= new PDO('mysql:host=fafa.kroko.xyz;dbname=aitbouqdir1', "aitbouqdir","crotocu");
+    }catch(PDOException $e){
+        echo "Erreur PDO : ".$e->getMessage()."<br/>";
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 
 <head>
