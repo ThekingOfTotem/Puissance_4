@@ -175,8 +175,7 @@ function verifHaut($grille, $position, $col, $tour)
                 } else {
                     return false;
                 }
-            }
-            if ($tour == "Joueur2") { //si le joueur 2 joue
+            }else { //si le joueur 2 joue
                 if ($grille[$position + $i][$col] == 2) {
                     $cpt2++;
                 } else {
@@ -370,7 +369,6 @@ function verifBasGauche($grille, $position, $col, $tour)
                 } else {
                     exit;
                 }
-              
             }
         }
     }
@@ -402,8 +400,8 @@ function victoire($grille, $position, $col, $tour)
         return false;
     }
 }
-//
 
+//On fait le changement de tour une fois qu'un joieur a joué
 function changementTour($grille,$tour,$col,$position){
     
     if($tour == "Joueur1" && victoire($_SESSION["grille"] ,$position,$col,$tour)== false){
