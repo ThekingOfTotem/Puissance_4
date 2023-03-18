@@ -1,11 +1,8 @@
 var nc, j;
 
 function traiterClic(button) {
-    //console.log(" traiterClic ");
     nc = button.getAttribute("data-colonne");
     j = button.getAttribute("data-joueur");
-    //appeler le serv
-    //$.get("validerCoup.php", { joueur: j, col: nc }, traiterCoup);
     $.ajax({
         url: "validerCoup.php",
         type: "GET",
@@ -13,8 +10,6 @@ function traiterClic(button) {
             joueur: j, col: nc
         },
         success: function(response) {
-          //mettre à jour le nom du joueur
-          //console.log(response)
           traiterCoup()
         }
       });
@@ -42,6 +37,9 @@ function traiterCoup() {
                 success: function(response) {
                     data = JSON.parse(response);
                     nomJoueurOld=document.getElementById("nomJoueur").textContent;
+                    if(data=="autre colonne"){
+                      alert("choisissez une autre colonne");
+                    }
                     if(data==true){
                       alert("La partie est gagnée par "+nomJoueurOld);
                       window.location.replace("demarrerPartieLocal.php");
@@ -51,40 +49,11 @@ function traiterCoup() {
                       position=data["position"];
                       var div = document.querySelector('[data-ligne="'+position+'"][data-colonne="'+nc+'"]');
                       div.classList.add(data["couleur"]);
-                      //console.log(data);
                     }
-                    /*$.ajax({
-                        url: "jouerCoup.php",
-                        type: "POST",
-                        data: {
-                          "action": "victoire",
-                          "grille":grille,
-                          "position":position, 
-                          "nc":nc, 
-                          "nomJoueurOld":nomJoueurOld
-                        },
-                        success: function(response){
-                          response=Boolean(JSON.parse(response));
-                          console.log(response);
-                          if(response=="true"){
-                            alert("pouet");
-                            window.location.replace("demarrerPartieLocal.php");
-                          }
-                        }
-                    });*/
                 }
               });
           }
         }
       });
       
-}
-
-function traiterVictoire(data) {
-    console.log("colonne " + nc);
-    console.log("joueur " + j);
-    console.log(data);
-    //data.grille
-    //data.resultat
-    //->afficher
 }

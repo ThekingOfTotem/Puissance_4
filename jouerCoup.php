@@ -79,7 +79,7 @@ function jouerCoup()
         }
         
     } else {
-        echo "<script>alert('Choisir une autre colonne');</script>";
+        echo json_encode("autre colonne");
     }
 }
 
