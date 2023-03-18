@@ -85,3 +85,16 @@ button:active {
 .yellow {
     background-color: yellow!important;
 }
+
+
+/*style bouton retour*/
+
+#retourJeu {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 15px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

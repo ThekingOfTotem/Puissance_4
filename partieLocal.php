@@ -45,6 +45,8 @@
       }
       echo "</div>";
       echo "</div>";
+      echo "<button id=\"retourJeu\" onclick=\"window.location.href='demarrerPartieLocal.php'\">Retour Menu</button>";
+      
 
     ?>
     
