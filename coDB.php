@@ -1,4 +1,5 @@
 <?php
+
 function seConnecter(){
     //connexion a la BDD
     //$pdo = new PDO('mysql:host=fafa.kroko.xyz;dbname=aitbouqdir1', "aitbouqdir","crotocu" );
@@ -13,7 +14,7 @@ function seConnecter(){
         echo "Erreur PDO : ".$e->getMessage()."<br/>";
         die();
     }
-    return $pdo
+    return $pdo;
 
 
 }

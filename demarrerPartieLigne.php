@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Choix Joueurs</title>
+    <title>Choix Nom</title>
     <!--lien avec le css-->
     <link href="CSS/indexStyle.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png">
