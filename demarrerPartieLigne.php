@@ -16,11 +16,7 @@
 <form method="get" action="partieLocal.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
-	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur 1" required>
-    </div>
-
-    <div id="name2">
-	    <input type="text" id="joueur2" name="joueur2" placeholder="Nom du joueur 2" required>
+	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur" required>
     </div>
 		
 	<input id="val" type="submit" value="Valider">
