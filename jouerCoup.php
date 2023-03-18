@@ -52,11 +52,11 @@ function jouerCoup()
                 $position = $i;
                 if ($_SESSION["tour"] == "Joueur1") {
                     $grille[$i][$col] = 1;
-                    if(victoire($grille,$position,$col,$_SESSION["tour"])){
+                    $_SESSION["grille"] = $grille;
+                    if(victoire($grille, 1)){
                         echo json_encode(true);
                         exit;
                     }else{
-                        $_SESSION["grille"] = $grille;
                         $_SESSION["tour"] = "Joueur2";
                         $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position);
                         echo json_encode($data);
@@ -64,12 +64,12 @@ function jouerCoup()
                     }
                 } if ($_SESSION["tour"] == "Joueur2"){
                     $grille[$i][$col] = 2;
-                    if(victoire($grille,$position,$col,$_SESSION["tour"])){
+                    $_SESSION["grille"] = $grille;
+                    if(victoire($grille, 2)){
                         echo json_encode(true);
                         exit;
                     }else{
                         $_SESSION["tour"] = "Joueur1";
-                        $_SESSION["grille"] = $grille;
                         $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position);
                         echo json_encode($data);
                         exit;
@@ -81,335 +81,60 @@ function jouerCoup()
     } else {
         echo "<script>alert('Choisir une autre colonne');</script>";
     }
-    if(victoire($_SESSION["grille"],$position,$col,$_SESSION["tour"])){
-        echo json_encode(true);
-        sleep(2);
-        header("Location:demarrerPartieLocal");
-    }
 }
 
-function verifDroit($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($col + 3 <= 6) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") {
-                if ($grille[$position][$col + $i] == 1) {
-                    $cpt1++;
-                } else {
-                    return false;
-                }
-                
-            } else {
-                if ($grille[$position][$col + $i] == 2) {
-                    $cpt2++;
-                } else {
-                    return false;
-                }
-                
-            }
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
 
-function verifGauche($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($col - 3 >= 0) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") { //si le joueur 1 joue
-                if ($grille[$position][$col - $i] == 1) {
-                    $cpt1++;
-                } else {
-                    return false;
-                }
+function victoire($grid, $player) {
+    $rows = count($grid);
+    $cols = count($grid[0]);
+    
+    // Vérification des lignes
+    for ($i = 0; $i < $rows; $i++) {
+        for ($j = 0; $j < $cols - 3; $j++) {
+            if ($grid[$i][$j] == $player &&
+                $grid[$i][$j+1] == $player &&
+                $grid[$i][$j+2] == $player &&
+                $grid[$i][$j+3] == $player) {
+                return true;
             }
-            if ($tour == "Joueur2") { //si le joueur 2 joue
-                if ($grille[$position][$col - $i] == 2) {
-                    $cpt2++;
-                } else {
-                    return false;
-                }
-            }
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
-
-function verifHaut($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($position + 3 <= 5) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") { //si le joueur 1 joue
-                if ($grille[$position + $i][$col] == 1) {
-                    $cpt1++;
-                } else {
-                    return false;
-                }
-            }else { //si le joueur 2 joue
-                if ($grille[$position + $i][$col] == 2) {
-                    $cpt2++;
-                } else {
-                    return false;
-                }
-            }
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
-
-function verifBas($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($position - 3 >= 0) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") {
-                if ($grille[$position - $i][$col] == 1) {
-                    $cpt1++;
-                } else {
-                    return false;
-                }
-            } else {
-                if ($grille[$position - $i][$col] == 2) {
-                    $cpt2++;
-                } else {
-                    return false;
-                }
-            }
-            
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
-
-function verifHautDroit($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($position - 3 >=0 && $col + 3 <= 6) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") {
-                if ($grille[$position - $i][$col + $i] == 1) {
-                    $cpt1++;
-                } else {
-                    return false;
-                }
-            } else {
-                if ($grille[$position - $i][$col + $i] == 2) {
-                    $cpt2++;
-                } else {
-                    return false;
-                }
-            }
-            
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
         }
     }
     
-}
-
-function verifHautGauche($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($position - 3 >=0 && $col - 3 >= 0) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") {
-                if ($grille[$position - $i][$col - $i] == 1) {
-                    $cpt1++;
-                } else {
-                    return false;
-                }
-                
-            } else {
-                if ($grille[$position - $i][$col - $i] == 2) {
-                    $cpt2++;
-                } else {
-                    return false;
-                }
-            
+    // Vérification des colonnes
+    for ($i = 0; $i < $rows - 3; $i++) {
+        for ($j = 0; $j < $cols; $j++) {
+            if ($grid[$i][$j] == $player &&
+                $grid[$i+1][$j] == $player &&
+                $grid[$i+2][$j] == $player &&
+                $grid[$i+3][$j] == $player) {
+                return true;
             }
         }
     }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
-
-function verifBasDroit($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($position + 3 <=5 && $col + 3 <=6) {
-        for ($i = 0; $i < 4; $i++) {
-            if ($tour == "Joueur1") {
-                if ($grille[$position + $i][$col + $i] == 1) {
-                    $cpt1++;
-                } else {
-                    exit;
-                }
-              
-            } else {
-                if ($grille[$position + $i][$col + $i] == 2) {
-                    $cpt2++;
-                } else {
-                    exit;
-                }
-               
-            }
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
-
-function verifBasGauche($grille, $position, $col, $tour)
-{
-    $cpt1 = 0;
-    $cpt2 = 0;
-    if ($position + 3 <= 5 && $col - 3 >= 0) {
-        for ($i = 0; $i < 3; $i++) {
-            if ($tour == "Joueur1") {
-                if ($grille[$position + $i][$col - $i] == 1) {
-                    $cpt1++;
-                } else {
-                    exit;
-                }
-              
-            } else {
-                if ($grille[$position + $i][$col - $i] == 2) {
-                    $cpt2++;
-                } else {
-                    exit;
-                }
-            }
-        }
-    }
-    if ($tour == "Joueur1") {
-        if ($cpt1 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }else{
-        if ($cpt2 == 4) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-}
-
-//si une des verifs est ok, on valide la victoire et pousse la grille 
-function victoire($grille, $position, $col, $tour)
-{
-    /*$grille = $_POST["grille"];;
-    $position = $_POST["position"];
-    $col = $_POST["nc"];
-    $tour = $_POST["nomJoueurOld"];*/
-    if (verifBas($grille, $position, $col, $tour) || verifHaut($grille, $position, $col, $tour) || verifGauche($grille, $position, $col, $tour) || verifDroit($grille, $position, $col, $tour) || verifBasDroit($grille, $position, $col, $tour) || verifBasGauche($grille, $position, $col, $tour) || verifHautDroit($grille, $position, $col, $tour) || verifHautGauche($grille, $position, $col, $tour)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-//On fait le changement de tour une fois qu'un joieur a joué
-function changementTour($grille,$tour,$col,$position){
     
-    if($tour == "Joueur1" && victoire($_SESSION["grille"] ,$position,$col,$tour)== false){
-        $tour =="Joueur2";
-        return $tour;
+    // Vérification des diagonales ascendantes
+    for ($i = 3; $i < $rows; $i++) {
+        for ($j = 0; $j < $cols - 3; $j++) {
+            if ($grid[$i][$j] == $player &&
+                $grid[$i-1][$j+1] == $player &&
+                $grid[$i-2][$j+2] == $player &&
+                $grid[$i-3][$j+3] == $player) {
+                return true;
+            }
+        }
     }
-    if($tour == "Joueur2"){
-        $tour =="Joueur1";
-        return $tour;
+    
+    // Vérification des diagonales descendantes
+    for ($i = 3; $i < $rows; $i++) {
+        for ($j = 3; $j < $cols; $j++) {
+            if ($grid[$i][$j] == $player &&
+                $grid[$i-1][$j-1] == $player &&
+                $grid[$i-2][$j-2] == $player &&
+                $grid[$i-3][$j-3] == $player) {
+                return true;
+            }
+        }
     }
+    
+    return false; // Aucune victoire n'a été trouvée
 }

@@ -41,11 +41,11 @@ function traiterCoup() {
                 },
                 success: function(response) {
                     data = JSON.parse(response);
-                    if(data){
-                      alert("La partie est terminée");
+                    nomJoueurOld=document.getElementById("nomJoueur").textContent;
+                    if(data==true){
+                      alert("La partie est gagnée par "+nomJoueurOld);
                       window.location.replace("demarrerPartieLocal.php");
                     }else{
-                      nomJoueurOld=document.getElementById("nomJoueur").textContent;
                       document.getElementById("nomJoueur").textContent=data["nomJoueur"];
                       grille=data["grille"];
                       position=data["position"];
