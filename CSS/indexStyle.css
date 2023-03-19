@@ -122,8 +122,15 @@
   
   #liste-parties li {
       border: 1px solid #ddd;
+      border-radius: 12px;
       margin-bottom: 5px;
       padding: 10px;
       width: 400px;
-      display: inline-block;
+  }
+  
+  #block_button_ligne {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 25px;
   }

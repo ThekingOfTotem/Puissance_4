@@ -14,7 +14,9 @@
 
 <body>
     <IMG class="displayed" src="logo.png">
+    <div id="block_button_ligne">
     <button id="jaune" onclick="window.location.href='creerPartieLigne.php'">Créer une partie</button>
+    </div>
 
     <div id="parties-en-cours">
         <h2>Liste des parties en cours</h2>
