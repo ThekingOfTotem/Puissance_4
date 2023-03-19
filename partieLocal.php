@@ -29,52 +29,46 @@
 
     //$cnx = mysqli_connect("localhost", "root", "root", "aitbouqdir1");
 
-    $requete = "SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?";
-
-    $res1 = $cnx->prepare($requete);
+    $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
     $res1->execute([$nomjoueur1]);
     $tabJoueur1 = $res1->fetchAll();
 
     if(count($tabJoueur1) > 0){
       $victoireJ1 = $tabJoueur1[0]['nbvictoire'];
     }else{
-      $params=[$nomjoueur1,0,0];
-      $req = "insert into salle (nomjoueur,record,nbvictoire) values (?,?,?)";
-      //$req = "INSERT INTO partielocal (nomjoueur, nbvictoire) VALUES ('$nomjoueur1', 0)";
-      $res = $cnx->prepare($req);
-      $res->execute($params);
 
-      //$result = mysqli_query($cnx, $req);
+      $req = $cnx->prepare("INSERT INTO partielocal(nomjoueur,record,nbvictoire) VALUES (:nomjoueur,:record,:nbvictoire)");
+      $req->execute(array(
+        'nomjoueur' => $nomjoueur1,
+        'record' => 0,
+        'nbvictoire' => 0
+      ));
 
-      if ($cnx->query($req) === TRUE) {
-        print_r("Nouvelle ligne insérée avec succès!");
-      }else{
-        print_r("Pas insérée !");
-      }
-
-      $req = "SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?";
-      $res1 = $cnx->prepare($req);
+      $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
       $res1->execute([$nomjoueur1]);
       $tabJoueur1 = $res1->fetchAll();
       var_dump($tabJoueur1);
       $victoireJ1 = $tabJoueur1[0]['nbvictoire'];
     }
 
-    $res2 = $cnx->prepare($requete);
+    $res2 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
     $res2->execute([$nomjoueur2]);
     $tabJoueur2 = $res2->fetchAll();
 
     if(count($tabJoueur2) > 0){
       $victoireJ2 = $tabJoueur2[0]['nbvictoire'];
     }else{
-      $req = "INSERT INTO partielocal (nomjoueur, record, nbvictoire) VALUES ('$nomjoueur2',null, 0)";
-      $res = $cnx->prepare($req);
-      $res->execute();
+      $req = $cnx->prepare("INSERT INTO partielocal(nomjoueur,record,nbvictoire) VALUES (:nomjoueur,:record,:nbvictoire)");
+      $req->execute(array(
+        'nomjoueur' => $nomjoueur2,
+        'record' => 0,
+        'nbvictoire' => 0
+      ));
 
-      $req = "SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?";
-      $res1 = $cnx->prepare($req);
-      $res1->execute([$nomjoueur2]);
-      $tabJoueur2 = $res1->fetchAll();
+      $res2 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
+      $res2->execute([$nomjoueur1]);
+      $tabJoueur2 = $res2->fetchAll();
+      var_dump($tabJoueur2);
       $victoireJ2 = $tabJoueur2[0]['nbvictoire'];
     }
 
