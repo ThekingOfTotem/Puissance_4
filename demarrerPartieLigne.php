@@ -1,6 +1,7 @@
 <?php
     session_start();
-    session_unset();
+    include "coDB.php";
+    seConnecter();
 ?>
 <!DOCTYPE html>
 
@@ -15,13 +16,13 @@
 <body>
 <IMG class="displayed" src="logo.png">
 
-<p id="titreJ">Veuillez vous connecter</p>
+<p id="titreJ">Choisissez votre nom</p>
 
 <form method="post" action="connexionJoueur.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
-       <!-- <label for="joueurLigne">Nom du joueur :</label>-->
-	    <input type="text" id="pseudo" name="pseudo" placeholder="Nom du joueur" required>
+	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur 1" required>
+        <?php ?>
     </div>
     <div>
         <!-- <label for="password">Mot de passe :</label>-->
