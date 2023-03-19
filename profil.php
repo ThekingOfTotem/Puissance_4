@@ -15,8 +15,6 @@
     $res = $cnx->prepare($req);
     $res->execute([$pseudo]);
     $tabStat = $res->fetch();
-
-    // afficher les informations de l'utilisateur dans la page HTML
 ?>
 
 
