@@ -30,13 +30,6 @@
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <style>
-        /* Style pour centrer le tableau et ajouter un espace avec l'image */
-        table {
-            margin: 20px auto;
-        }
-        .displayed {
-            margin-bottom: 20px;
-        }
         /* Style pour l'entête du tableau */
         th {
             background-color: #FFC107; /* jaune */
