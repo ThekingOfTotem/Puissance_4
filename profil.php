@@ -15,8 +15,6 @@
     $res = $cnx->prepare($req);
     $res->execute([$pseudo]);
     $tabStat = $res->fetch();
-
-    // afficher les informations de l'utilisateur dans la page HTML
 ?>
 
 
@@ -26,43 +24,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Puissance 4</title>
-    <link href="CSS/indexStyle.css" rel="stylesheet" />
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <!--<link rel="stylesheet" href="CSS/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!--<link href="CSS/indexStyle.css" rel="stylesheet" />-->
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <style>
-        /* Style pour centrer le tableau et ajouter un espace avec l'image */
-        table {
-            margin: 20px auto;
-        }
-        .displayed {
-            margin-bottom: 20px;
-        }
-        /* Style pour l'entête du tableau */
-        th {
-            background-color: #FFC107; /* jaune */
-            color: #FFF;
-            padding: 10px;
-        }
-
-        /* Style pour les lignes du tableau */
-        td {
-            border: 1px solid #000; /* noir */
-            padding: 10px;
-        }
-
-        /* Style pour la première ligne du tableau */
-        tr:first-child {
-            background-color: #1976D2; /* bleu */
-            color: #FFF;
-        }
-    </style>
 </head>
 
 
 <body>
     <IMG class="displayed" src="logo.png">
     <div>
-        <table class="table table-striped">
+        <table class="table-dark table-hover">
             <thead>
                 <tr>
                     <th>Nom</th>
