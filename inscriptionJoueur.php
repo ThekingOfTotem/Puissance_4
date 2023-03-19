@@ -33,7 +33,8 @@
         $res= $cnx->prepare($req);
         $res->execute([$pseudo, $password]);
          // Redirigez l'utilisateur vers une page de confirmation d'inscription
-        header("Location: menuLigne.php"); 
+        header("Location: menuLigne.php");
+        $_SESSION['pseudo']=$pseudo;
         exit();
     } else {
          // Affichez et rediriger les erreurs éventuelles

@@ -37,7 +37,7 @@ function traiterCoup() {
                 if (data['victoire'] == true) { // Si le coup fait gagner le joueur 
                     setTimeout(function() {
                         alert("La partie est gagnée par " + nomJoueurOld); // On affiche un message
-                        window.location.replace("demarrerPartieLocal.php"); // On redirige vers la page de démarrage
+                        window.location.replace("menuLigne.php"); // On redirige vers la page de démarrage
                     }, 20);
                 } else { // Si le coup ne fait pas gagner
                     document.getElementById("nomJoueur").textContent = data["nomJoueur"]; // On change l'affichage pour indiquer le prochain tour
@@ -53,10 +53,37 @@ function traiterCoup() {
                     data = JSON.parse(response);
                     if (data == "true") { // Si elle est remplie on arrête la partie et on redirige vers la page de démarrage
                         alert("La partie se termine sur une égalité !");
-                        window.location.replace("demarrerPartieLocal.php");
+                        window.location.replace("menuLigne.php");
                     }
                 }
             });
         }
     })
 };
+
+$(document).ready(function() {
+    // Récupération des parties en cours via une requête AJAX
+    $.ajax({
+        url: "recupererPartiesEnCours.php",
+        type: "GET",
+        dataType: "json",
+        success: function(result) {
+            // Affichage des parties dans la liste
+            var listeParties = $("#liste-parties");
+            for (var i = 0; i < result.length; i++) {
+                var partie = result[i];
+                var nomJoueur1 = partie.Nom_Joueur1;
+                var nomJoueur2 = partie.Nom_Joueur2;
+                var statut = partie.Statut;
+                var idPartie = partie.ID_partie;
+                var li = $("<li>");
+                var a = $("<a>").attr("href", "partieLigne.php?id_partie=" + idPartie).text(nomJoueur1 + " vs " + nomJoueur2 + " (" + statut + ")");
+                li.append(a);
+                listeParties.append(li);
+            }
+        },
+        error: function() {
+            alert("Une erreur est survenue lors de la récupération des parties en cours.");
+        }
+    });
+});

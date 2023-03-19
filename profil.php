@@ -58,27 +58,42 @@
     </style>
 </head>
 
-
 <body>
     <IMG class="displayed" src="logo.png">
     <div>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Nom</th>
-                    <th>Victoire</th>
-                    <th>Défaite</th>
-                    <th>Nul</th>
-                    <th>Total parties jouées</th>
+                    <th>Statistiques</th>
+                    <?php foreach ($tabStat as $joueur) : ?>
+                        <th><?php echo $joueur['Nom_joueur']; ?></th>
+                    <?php endforeach; ?>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><?php echo $tabStat['Nom_joueur']; ?></td>
-                    <td><?php echo $tabStat['Victoire']; ?></td>
-                    <td><?php echo $tabStat['Defaite']; ?></td>
-                    <td><?php echo $tabStat['Nul']; ?></td>
-                    <td><?php echo $tabStat['Total_parties_jouees']; ?></td>
+                    <td>Victoire</td>
+                    <?php foreach ($tabStat as $joueur) : ?>
+                        <td><?php echo $joueur['Victoire']; ?></td>
+                    <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <td>Défaite</td>
+                    <?php foreach ($tabStat as $joueur) : ?>
+                        <td><?php echo $joueur['Defaite']; ?></td>
+                    <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <td>Nul</td>
+                    <?php foreach ($tabStat as $joueur) : ?>
+                        <td><?php echo $joueur['Nul']; ?></td>
+                    <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <td>Total parties jouées</td>
+                    <?php foreach ($tabStat as $joueur) : ?>
+                        <td><?php echo $joueur['Total_parties_jouees']; ?></td>
+                    <?php endforeach; ?>
                 </tr>
             </tbody>
         </table>
