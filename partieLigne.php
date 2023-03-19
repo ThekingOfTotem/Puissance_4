@@ -40,7 +40,8 @@
     <h1 class="element-centre">Ma grille :</h1>
     
     <?php
-      echo "<h2 id=nomJoueur class=element-centre style=z-index:2>".$_SESSION['joueur1']."</h2>";
+      echo "<h1 class='element-centre'>".$_SESSION["nomJoueur1"]." contre ".$_SESSION["nomJoueur2"]."</h1>";
+      echo "<h2 id=nomJoueur class=element-centre style=z-index:2>C'est à ".$_SESSION["nomJoueur1"]." de jouer</h2>";
       echo "<div id=jeu class=element-centre>";
       echo "<div id=mes-boutons >";
       for ($colonne = 0; $colonne <=6 ; $colonne++) {

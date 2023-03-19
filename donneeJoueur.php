@@ -1,5 +1,0 @@
-<?php
-
-require "connexionDB.php";
-
-
