@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<?php
+ session_start();
+ session_destroy();
+?>
+
 <head>
     <meta charset="UTF-8">
     <title>Choix Joueurs</title>
