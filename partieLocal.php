@@ -47,7 +47,7 @@
       $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
       $res1->execute([$nomjoueur1]);
       $tabJoueur1 = $res1->fetchAll();
-      var_dump($tabJoueur1);
+      //var_dump($tabJoueur1);
       $victoireJ1 = $tabJoueur1[0]['nbvictoire'];
     }
 
