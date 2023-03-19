@@ -34,7 +34,14 @@
     
 	<input id="val" type="submit" value="S'inscrire">
 </form>
-
+<?php
+		if(isset($_SESSION['erreurs'])){
+			foreach($_SESSION['erreurs'] as $erreur){
+				echo '<p id="msgErreur">ATTENTION ERREUR(S) : '.$erreur.'</p>';
+			}
+			unset($_SESSION['erreurs']);
+		}
+	?>
 <button id="retourJ" onclick="window.location.href='index.html'">Retour Menu</button>
 
 
