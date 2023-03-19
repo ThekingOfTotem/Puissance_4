@@ -16,18 +16,7 @@ function traiterClic(button) {
 }
 
 function traiterCoup() {
-    $.ajax({
-        url: "jouerCoup.php",
-        type: "POST",
-        data: {
-          action: "grilleRemplie"
-        },
-        success: function(response) {
-          if (response == true) {
-            console.log("partie terminée");
-            alert("partie terminée");
-            window.location.replace("demarrerPartieLocal.php");
-          } else {
+    
             $.ajax({
                 url: "jouerCoup.php",
                 type: "POST",
@@ -53,10 +42,20 @@ function traiterCoup() {
                         document.getElementById("nomJoueur").textContent=data["nomJoueur"];
                       }
                     }
+                    $.ajax({
+                      url: "jouerCoup.php",
+                      type: "POST",
+                      data: {
+                        action: "grilleRemplie"
+                      },
+                      success: function(response) {
+                        data = JSON.parse(response);
+                        if (data == "true") {
+                          alert("La partie se termine sur une égalité !");
+                          window.location.replace("demarrerPartieLocal.php");
                 }
-              });
+              }
+            });
           }
-        }
-      });
-      
-}
+        })
+      };

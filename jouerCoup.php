@@ -32,9 +32,9 @@ function grilleRemplie()
         }
     }
     if ($cmp == 7) {
-        return true; // la grille est remplie
+        echo json_encode("true"); // la grille est remplie
     } else {
-        return false; //la grille n'est pas remplie
+        echo json_encode("false"); //la grille n'est pas remplie
     }
 }
 
