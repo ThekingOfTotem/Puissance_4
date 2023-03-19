@@ -16,7 +16,7 @@
     if ($password != $password_confirmation) {
         $erreurs[] = "Les mots de passe ne correspondent pas";
     } 
-    
+    $password = password_hash($_POST['MotDePasse'], PASSWORD_DEFAULT);
     // Vérifiez si le nom d'utilisateur existe déjà dans la base de données
     $req = "SELECT * FROM joueur WHERE Nom_joueur = ?";
     $res = $cnx->prepare($req);

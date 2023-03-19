@@ -62,6 +62,9 @@ function traiterCoup() {
 };
 
 $(document).ready(function() {
+    // Récupération du nom du joueur connecté
+    var nomJoueurConnecte = "<?php echo $nomJoueurConnecte; ?>";
+
     // Récupération des parties en cours via une requête AJAX
     $.ajax({
         url: "recupererPartiesEnCours.php",
@@ -70,8 +73,7 @@ $(document).ready(function() {
         success: function(result) {
             // Affichage des parties dans la liste
             var listeParties = $("#liste-parties");
-            var nomJoueurConnecte = "<?php echo $nomJoueurConnecte; ?>";;
-            console.log(nomJoueurConnecte);
+
             for (var i = 0; i < result.length; i++) {
                 var partie = result[i];
                 var nomJoueur1 = partie.Nom_Joueur1;

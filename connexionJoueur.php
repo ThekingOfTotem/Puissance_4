@@ -20,7 +20,7 @@
 
     if (!$tabJoueur) {
         $erreurs[] = "Erreur sur le nom d'utilisateur ou le mot de passe";
-    } elseif ($tabJoueur['Mot_de_passe'] != $password) {
+    } elseif (password_verify($tabJoueur['Mot_de_passe'],$password)) {
         $erreurs[] = "Erreur sur le nom d'utilisateur ou le mot de passe";
     }
 

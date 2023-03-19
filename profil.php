@@ -29,16 +29,17 @@ $tabStat = $res->fetch();
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <style>
         th {
-            border: 1px solid #ddd;
+            border: 2px solid #ddd;
             color: black;
             font-weight: bold;
+            font-size: 25px;
             padding: 12px;
             text-align: center;
         }
 
         /* Style pour les lignes du tableau */
         td {
-            border: 1px solid #ddd;
+            border: 2px solid #ddd;
             padding: 8px;
             text-align: center;
             color: white;
