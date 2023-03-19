@@ -28,6 +28,7 @@
     if (empty($erreurs)) {
         // Si les informations de connexion sont valides, redirigez l'utilisateur vers une page de menu
         header("Location: menuLigne.php");
+        $_SESSION['pseudo']=$tabJoueur['Nom_joueur'];
         exit();
     }else {
         // Affichez et rediriger les erreurs éventuelles
@@ -35,12 +36,4 @@
        header("location:connexionForm.php"); 
        exit();    
    }
-
-   
-
-
-
-
-
-
 
