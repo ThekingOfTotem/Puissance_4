@@ -56,27 +56,21 @@ function jouerCoup()
                     $_SESSION["grille"] = $grille;
                     if(victoire($grille, 1)){
                         $victoire=true;
-                        //echo json_encode(true);
-                        //exit;
-                    }//else{
+                    }
                         $_SESSION["tour"] = "Joueur2";
                         $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
                         echo json_encode($data);
                         exit;
-                    //}
                 } if ($_SESSION["tour"] == "Joueur2"){
                     $grille[$i][$col] = 2;
                     $_SESSION["grille"] = $grille;
                     if(victoire($grille, 2)){
                         $victoire=true;
-                        //echo json_encode(true);
-                        //exit;
-                    }//else{
+                    }
                         $_SESSION["tour"] = "Joueur1";
                         $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
                         echo json_encode($data);
                         exit;
-                    //}
                 }
             }
         }

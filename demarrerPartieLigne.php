@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "coDB.php";
+    include "connexionDB.php";
     seConnecter();
 ?>
 <!DOCTYPE html>
