@@ -19,7 +19,7 @@
     </div>
 
     <div id="parties-en-cours">
-        <h2>Liste des parties en cours</h2>
+        <p id="titre-liste">Liste des parties en cours :</p>
     <ul id="liste-parties"></ul>
 
     <button id="retourJ" onclick="window.location.href='menuLigne.php'">Retour Menu</button>

@@ -134,3 +134,9 @@
       justify-content: center;
       margin-top: 25px;
   }
+  
+  #titre-liste {
+      color: white;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 30px;
+  }
