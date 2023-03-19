@@ -97,3 +97,12 @@
   #val {
       margin-top: 20px;
   }
+  /*En ligne*/
+  
+  #inscription {
+      color: white;
+      text-align: center;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 20px;
+  }

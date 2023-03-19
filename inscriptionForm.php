@@ -1,18 +1,12 @@
 <?php
-<<<<<<< Updated upstream
-    session_start();
-    include "connexionDB.php";
-    seConnecter();
-=======
      session_start();
      require_once 'connexionDB.php'; 
->>>>>>> Stashed changes
 ?>
 <!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Connexion</title>
+    <title>Inscription</title>
     <!--lien avec le css-->
     <link href="CSS/indexStyle.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="favicon.png">
@@ -21,24 +15,26 @@
 <body>
 <IMG class="displayed" src="logo.png">
 
-<p id="titreJ">Veuillez vous connecter</p>
+<p id="titreJ">Créez votre compte</p>
 
-<form method="post" action="connexionJoueur.php">
+<form method="post" action="inscriptionJoueur.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
-	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur" required>
+	    <input type="text" id="pseudo" name="pseudo" placeholder="Nom du joueur" required>
         <?php ?>
     </div>
     <div>
         <!-- <label for="password">Mot de passe :</label>-->
         <input type="password" id="password "name="password" placeholder="Mot de passe "required><br><br>
     </div>
+    <div>
+       <!-- <label for="password_confirm">Confirmez votre mot de passe:</label>-->
+        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirmer votre mot de passe" required>
+    </div>
     
-	<input id="val" type="submit" value="Valider">
+	<input id="val" type="submit" value="S'inscrire">
 </form>
-<div id="inscription">
-    <p>Pas de compte ? <a href="inscriptionForm.php">Créer un compte</a></p>
-</div>
+
 <button id="retourJ" onclick="window.location.href='index.html'">Retour Menu</button>
 
 
