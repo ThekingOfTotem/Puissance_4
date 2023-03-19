@@ -26,14 +26,31 @@
     <meta charset="UTF-8">
     <title>Puissance 4</title>
     <link href="CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
 </head>
 
 
 <body>
     <IMG class="displayed" src="logo.png">
-    <h1>Profile de <?php echo $tabStat['Nom_joueur']; ?></h1>
-    <p>Nombre de victoires : <?php echo $tabStat['Victoire']; ?></p>
+    <div>
+        <h1>Profile de <?php echo $tabStat['Nom_joueur']; ?></h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre de victoires</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?php echo $tabStat['Victoire']; ?></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <button id="retourJ" onclick="window.location.href='menuLigne.php'">Retour Menu</button>
+
 </body>
 
 </html>
