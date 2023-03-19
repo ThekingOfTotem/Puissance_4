@@ -27,8 +27,6 @@
 
     require_once 'connexionDB.php'; 
 
-    //$cnx = mysqli_connect("localhost", "root", "root", "aitbouqdir1");
-
     $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
     $res1->execute([$nomjoueur1]);
     $tabJoueur1 = $res1->fetchAll();
@@ -94,7 +92,7 @@
     echo "</div>";
     echo "</div>";
     echo "<button id=\"retourJeu\" onclick=\"window.location.href='demarrerPartieLocal.php'\">Retour Menu</button>";
-    echo "<div id=\"score\">".$victoireJ1.$victoireJ2."</div>";
+    echo "<p id=\"score\">".$nomjoueur1." : ".$victoireJ1."</br>".$nomjoueur2." : ".$victoireJ2."</p>";
 
     ?>
     
