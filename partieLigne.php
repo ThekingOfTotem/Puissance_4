@@ -19,7 +19,7 @@
     $res = $cnx->prepare($req);
     $res->execute([$_GET['id_partie']]);
     $partie = $res->fetch();
-    //echo json_encode($partie);
+    echo json_encode($partie);
     $joueur1 = $partie['Nom_Joueur1'];
     $joueur2 = $partie['Nom_Joueur2'];
 
@@ -34,7 +34,7 @@
     $_SESSION['joueur2'] = $joueur2;
 
   
-    $_SESSION['Tour'] = $partie["Tour"];
+    $_SESSION['Tour'] = "Joueur1";
     ?>
 
     <h1 class="element-centre">Ma grille :</h1>

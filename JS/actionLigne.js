@@ -3,10 +3,9 @@ var nc, j;
 function traiterClic(button) {
     nc = button.getAttribute("data-colonne"); // On récupère la colonne du bouton
     $.ajax({ // On vérifie que le coup soit possible
-        url: "validerCoup.php",
+        url: "jouerCoup.php",
         type: "GET",
         data: {
-            joueur: j,
             col: nc
         },
         success: function(response) { // Si le coup est possible on l'execute
@@ -25,7 +24,9 @@ function traiterCoup() {
             col: nc // On détaille les valeurs envoyées
         },
         success: function(response) {
+            console.log(response);
             data = JSON.parse(response); // On adapte le contenu JSON
+
             nomJoueurOld = document.getElementById("nomJoueur").textContent; // On stock le nom du Joueur aillant joué
             if (data == "autre colonne") { // Si la colonne choisie n'est pas adapté
                 alert("choisissez une autre colonne");
@@ -36,11 +37,11 @@ function traiterCoup() {
                 div.classList.add(data["couleur"]); // On modifie la couleur de la case
                 if (data['victoire'] == true) { // Si le coup fait gagner le joueur 
                     setTimeout(function() {
-                        alert("La partie est gagnée par " + nomJoueurOld); // On affiche un message
+                        alert("La partie est terminée"); // On affiche un message
                         window.location.replace("menuLigne.php"); // On redirige vers la page de démarrage
                     }, 20);
                 } else { // Si le coup ne fait pas gagner
-                    document.getElementById("nomJoueur").textContent = data["nomJoueur"]; // On change l'affichage pour indiquer le prochain tour
+                    document.getElementById("nomJoueur").textContent = "C'est à " + data["nomJoueur"] + " de jouer"; // On change l'affichage pour indiquer le prochain tour
                 }
             }
             $.ajax({ // On verifie que la grille n'est pas remplie
@@ -62,9 +63,6 @@ function traiterCoup() {
 };
 
 $(document).ready(function() {
-    // Récupération du nom du joueur connecté
-    var nomJoueurConnecte = "<?php echo $nomJoueurConnecte; ?>";
-
     // Récupération des parties en cours via une requête AJAX
     $.ajax({
         url: "recupererPartiesEnCours.php",
@@ -80,13 +78,11 @@ $(document).ready(function() {
                 var nomJoueur2 = partie.Nom_Joueur2;
                 var statut = partie.Statut;
                 var idPartie = partie.ID_partie;
-                if (nomJoueur1 == nomJoueurConnecte || nomJoueur2 == nomJoueurConnecte) { // Vérification si le joueur est l'un des joueurs de la partie
 
-                    var li = $("<li>");
-                    var a = $("<a>").attr("href", "partieLigne.php?id_partie=" + idPartie).text(nomJoueur1 + " vs " + nomJoueur2 + " (" + statut + ")");
-                    li.append(a);
-                    listeParties.append(li);
-                }
+                var li = $("<li>");
+                var a = $("<a>").attr("href", "partieLigne.php?id_partie=" + idPartie).text(nomJoueur1 + " vs " + nomJoueur2 + " (" + statut + ")");
+                li.append(a);
+                listeParties.append(li);
             }
         },
         error: function() {
