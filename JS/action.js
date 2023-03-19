@@ -3,10 +3,9 @@ var nc, j;
 function traiterClic(button) {
     nc = button.getAttribute("data-colonne"); // On récupère la colonne du bouton
     $.ajax({ // On vérifie que le coup soit possible
-        url: "validerCoup.php",
+        url: "jouerCoup.php",
         type: "GET",
         data: {
-            joueur: j,
             col: nc
         },
         success: function(response) { // Si le coup est possible on l'execute
@@ -36,11 +35,11 @@ function traiterCoup() {
                 div.classList.add(data["couleur"]); // On modifie la couleur de la case
                 if (data['victoire'] == true) { // Si le coup fait gagner le joueur 
                     setTimeout(function() {
-                        alert("La partie est gagnée par " + nomJoueurOld); // On affiche un message
+                        alert("La partie est terminée"); // On affiche un message
                         window.location.replace("demarrerPartieLocal.php"); // On redirige vers la page de démarrage
                     }, 20);
                 } else { // Si le coup ne fait pas gagner
-                    document.getElementById("nomJoueur").textContent = data["nomJoueur"]; // On change l'affichage pour indiquer le prochain tour
+                    document.getElementById("nomJoueur").textContent = "C'est à "+data["nomJoueur"]+" de jouer"; // On change l'affichage pour indiquer le prochain tour
                 }
             }
             $.ajax({ // On verifie que la grille n'est pas remplie

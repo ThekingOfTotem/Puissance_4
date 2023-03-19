@@ -27,6 +27,8 @@
 
     require_once 'connexionDB.php'; 
 
+    
+
     $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
     $res1->execute([$nomjoueur1]);
     $tabJoueur1 = $res1->fetchAll();
@@ -66,7 +68,6 @@
       $res2 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
       $res2->execute([$nomjoueur1]);
       $tabJoueur2 = $res2->fetchAll();
-      var_dump($tabJoueur2);
       $victoireJ2 = $tabJoueur2[0]['nbvictoire'];
     }
 
@@ -92,8 +93,7 @@
     echo "</div>";
     echo "</div>";
     echo "<button id=\"retourJeu\" onclick=\"window.location.href='demarrerPartieLocal.php'\">Retour Menu</button>";
-    echo "<p id=\"score\">".$nomjoueur1." : ".$victoireJ1."</br>".$nomjoueur2." : ".$victoireJ2."</p>";
-
+    echo "<p id=\"score\">Nombre de victoire :</br>".$nomjoueur1." : ".$victoireJ1."</br>".$nomjoueur2." : ".$victoireJ2."</p>";
     ?>
     
     </div>

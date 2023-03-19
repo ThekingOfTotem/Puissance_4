@@ -1,10 +1,16 @@
 <?php
 session_start();
+
+require "connexionDB.php";
+
 $grille = $_SESSION["grille"];
 $tour = $_SESSION["tour"];
+$nomjoueur1 = $_SESSION['nomJoueur1'];
+$nomjoueur2 = $_SESSION['nomJoueur2'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') { // Si le script reçoit des variable GET
     $col = $_GET["col"];
+    coupPossible($grille,$col);
     
 }else{ //Sinon on execute la fonction appelée
     $action = $_POST["action"];
@@ -80,6 +86,9 @@ function jouerCoup()
     }
 }
 
+
+
+
 // Cette fonction vérifie si le jeton posé permet de gagner la partie
 function victoire($grid, $player) {
     $rows = count($grid);
@@ -92,7 +101,8 @@ function victoire($grid, $player) {
                 $grid[$i][$j+1] == $player &&
                 $grid[$i][$j+2] == $player &&
                 $grid[$i][$j+3] == $player) {
-                return true;
+                    ajouterVictoire($player);
+                    return true;
             }
         }
     }
@@ -104,7 +114,8 @@ function victoire($grid, $player) {
                 $grid[$i+1][$j] == $player &&
                 $grid[$i+2][$j] == $player &&
                 $grid[$i+3][$j] == $player) {
-                return true;
+                    ajouterVictoire($player);
+                    return true;
             }
         }
     }
@@ -116,7 +127,8 @@ function victoire($grid, $player) {
                 $grid[$i-1][$j+1] == $player &&
                 $grid[$i-2][$j+2] == $player &&
                 $grid[$i-3][$j+3] == $player) {
-                return true;
+                    ajouterVictoire($player);
+                    return true;
             }
         }
     }
@@ -128,10 +140,38 @@ function victoire($grid, $player) {
                 $grid[$i-1][$j-1] == $player &&
                 $grid[$i-2][$j-2] == $player &&
                 $grid[$i-3][$j-3] == $player) {
-                return true;
+                    ajouterVictoire($player);
+                    return true;
             }
         }
     }
     
     return false; // Aucune victoire n'a été trouvée
+}
+
+function ajouterVictoire($player){
+global $cnx;
+global $nomjoueur1;
+global $nomjoueur2;
+
+    if($player == 1){
+        $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
+        $res1->execute([$nomjoueur1]);
+        $tab = $res1->fetchAll();
+        $victoire = $tab[0]['nbvictoire']+1;
+        $req = $cnx->prepare("UPDATE partielocal SET nbvictoire = $victoire WHERE nomjoueur = :nomjoueur");
+        $req->execute(array(
+          'nomjoueur' => $nomjoueur1
+        ));
+      }
+      if ($player == 2) {
+          $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
+          $res1->execute([$nomjoueur2]);
+          $tab = $res1->fetchAll();
+          $victoire = $tab[0]['nbvictoire']+1;
+          $req = $cnx->prepare("UPDATE partielocal SET nbvictoire = $victoire WHERE nomjoueur = :nomjoueur");
+          $req->execute(array(
+            'nomjoueur' => $nomjoueur2
+          ));
+      } 
 }
