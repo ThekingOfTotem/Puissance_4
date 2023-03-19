@@ -58,7 +58,7 @@ function jouerCoup()
                         $victoire=true; // Si le coup joué permet de gagner, on change la valeur de la variable victoire
                     }
                         $_SESSION["tour"] = "Joueur2"; // On change de joueur
-                        $data = array('couleur'=>'red' ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
+                        $data = array('couleur'=>'red','nomJoueurOld' => $_SESSION["nomJoueur1"] ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
                         echo json_encode($data); // On renvoie les valeurs nécessaires 0à la poursuite du jeu
                         exit;
                 } if ($_SESSION["tour"] == "Joueur2"){
@@ -68,7 +68,7 @@ function jouerCoup()
                         $victoire=true; // Si le coup joué permet de gagner, on change la valeur de la variable victoire
                     }
                         $_SESSION["tour"] = "Joueur1"; // On change de joueur
-                        $data = array('couleur'=>'yellow' ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
+                        $data = array('couleur'=>'yellow','nomJoueurOld' => $_SESSION["nomJoueur2"] ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
                         echo json_encode($data); // On renvoie les valeurs nécessaires 0à la poursuite du jeu
                         exit;
                 }
