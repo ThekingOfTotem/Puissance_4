@@ -42,7 +42,7 @@
 			unset($_SESSION['erreurs']);
 		}
 	?>
-<button id="retourJ" onclick="window.location.href='index.html'">Retour Menu</button>
+<button id="retourJ" onclick="window.location.href='connexionForm.php'">Retour Menu</button>
 
 
 </body>

@@ -21,7 +21,7 @@
 <form method="post" action="connexionJoueur.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
-	    <input type="text" id="joueur1" name="joueur1" placeholder="Nom du joueur" required>
+	    <input type="text" id="pseudo" name="pseudo" placeholder="Nom du joueur" required>
         <?php ?>
     </div>
     <div>
@@ -34,6 +34,14 @@
 <div id="inscription">
     <p>Pas de compte ? <a href="inscriptionForm.php">Créer un compte</a></p>
 </div>
+<?php
+		if(isset($_SESSION['erreurs'])){
+			foreach($_SESSION['erreurs'] as $erreur){
+				echo '<p id="msgErreur">ATTENTION ERREUR(S) : '.$erreur.'</p>';
+			}
+			unset($_SESSION['erreurs']);
+		}
+	?>
 <button id="retourJ" onclick="window.location.href='index.html'">Retour Menu</button>
 
 

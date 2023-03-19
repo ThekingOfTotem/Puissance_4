@@ -39,11 +39,8 @@
          // Affichez et rediriger les erreurs éventuelles
          $_SESSION['erreurs'] = $erreurs;
         header("location:inscriptionForm.php"); 
-        exit(); 
-       
-        
-        
-}
+        exit();    
+    }
 
 
 
