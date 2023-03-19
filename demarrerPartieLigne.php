@@ -1,12 +1,7 @@
 <?php
-<<<<<<< Updated upstream
-    session_start();
-    include "connexionDB.php";
-    seConnecter();
-=======
      session_start();
      require_once 'connexionDB.php'; 
->>>>>>> Stashed changes
+
 ?>
 <!DOCTYPE html>
 
