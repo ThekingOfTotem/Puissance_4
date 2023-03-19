@@ -16,7 +16,7 @@
     }
     return $pdo;*/
     try{
-        $cnx= new PDO('mysql:host=localhost;dbname=aitbouqdir1',"root","");
+        $cnx= new PDO('mysql:host=localhost;dbname=aitbouqdir1',"root","root");
     }catch(PDOException $e){
         echo "Erreur PDO : ".$e->getMessage()."<br/>";
         die();
