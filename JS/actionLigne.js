@@ -70,16 +70,21 @@ $(document).ready(function() {
         success: function(result) {
             // Affichage des parties dans la liste
             var listeParties = $("#liste-parties");
+            var nomJoueurConnecte = "<?php echo $nomJoueurConnecte; ?>";;
+            console.log(nomJoueurConnecte);
             for (var i = 0; i < result.length; i++) {
                 var partie = result[i];
                 var nomJoueur1 = partie.Nom_Joueur1;
                 var nomJoueur2 = partie.Nom_Joueur2;
                 var statut = partie.Statut;
                 var idPartie = partie.ID_partie;
-                var li = $("<li>");
-                var a = $("<a>").attr("href", "partieLigne.php?id_partie=" + idPartie).text(nomJoueur1 + " vs " + nomJoueur2 + " (" + statut + ")");
-                li.append(a);
-                listeParties.append(li);
+                if (nomJoueur1 == nomJoueurConnecte || nomJoueur2 == nomJoueurConnecte) { // Vérification si le joueur est l'un des joueurs de la partie
+
+                    var li = $("<li>");
+                    var a = $("<a>").attr("href", "partieLigne.php?id_partie=" + idPartie).text(nomJoueur1 + " vs " + nomJoueur2 + " (" + statut + ")");
+                    li.append(a);
+                    listeParties.append(li);
+                }
             }
         },
         error: function() {

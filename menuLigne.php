@@ -1,6 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['pseudo'])) {
+    $nomJoueurConnecte = $_SESSION['pseudo'];
 ?>
     <!DOCTYPE html>
 
@@ -9,6 +10,12 @@ if (isset($_SESSION['pseudo'])) {
         <title>Puissance 4</title>
         <link href="CSS/indexStyle.css" rel="stylesheet" />
         <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <script src="JS/jquery-3.6.3.min.js"></script>
+        <script src="JS/actionLigne.js"></script>
+        <script>
+            var nomJoueurConnecte = "<?php echo $nomJoueurConnecte; ?>";
+            console.log(nomJoueurConnecte);
+        </script>
     </head>
 
 

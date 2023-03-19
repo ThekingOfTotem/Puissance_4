@@ -19,9 +19,9 @@
     $tabJoueur = $res->fetch();
 
     if (!$tabJoueur) {
-        $erreurs[] = "Le nom d'utilisateur n'existe pas";
+        $erreurs[] = "Erreur sur le nom d'utilisateur ou le mot de passe";
     } elseif ($tabJoueur['Mot_de_passe'] != $password) {
-        $erreurs[] = "Le mot de passe est incorrect";
+        $erreurs[] = "Erreur sur le nom d'utilisateur ou le mot de passe";
     }
 
 
