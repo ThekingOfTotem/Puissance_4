@@ -23,8 +23,8 @@ if (isset($_SESSION['pseudo'])) {
         <IMG class="displayed" src="/Puissance_4/Image/logo.png">
         <p id="titre">Bienvenue <?php echo $_SESSION['pseudo']; ?></p>
         <div id="block_button">
-            <button id="jaune" onclick="window.location.href='afficherProfil.php'">Voir le profil</button>
-            <button id="rouge" onclick="window.location.href='demarrerPartieEnLigne.php'">Trouver une partie</button>
+            <button id="jaune" onclick="window.location.href='/Puissance_4/PartieEnLigne/afficherProfil.php'">Voir le profil</button>
+            <button id="rouge" onclick="window.location.href='/Puissance_4/PartieEnLigne/demarrerPartieEnLigne.php'">Trouver une partie</button>
         </div>
         <button id="retourJ" onclick="window.location.href='/Puissance_4/Connexion/seConnecterForm.php'">Retour Menu</button>
 

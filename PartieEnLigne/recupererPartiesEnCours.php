@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "connexionDB.php";
+require_once "/Puissance_4/Connexion/connexionDB.php";
 $req = "SELECT * FROM parties WHERE Statut = 'en cours' AND (Nom_Joueur1=:nomJoueurCo OR Nom_Joueur2=:nomJoueurCo)";
 $res = $cnx->prepare($req);
 $res->execute(array(

@@ -2,7 +2,7 @@
 session_start();
 
 // Récupération du fichier de connexion à la base de données
-require_once 'connexionDB.php';
+require_once '/Puissance_4/Connexion/connexionDB.php';
 
 
 // Sélectionne 2 utilisateurs aléatoirement
@@ -25,7 +25,7 @@ if(count($tabJoueurs) == 2){
     $_SESSION["nomJoueur2"] = $tabJoueurs[1]['Nom_joueur'];
     $_SESSION["tour"]="Joueur1";
     // Redirige les joueurs vers la page de jeu avec l'ID de la partie dans l'URL
-    header("Location: partieLigne.php?id_partie=$id_partie");
+    header("Location: /Puissance_4/PartieEnLigne/jouerPartieLigne.php?id_partie=$id_partie");
     exit();
 
 }else{

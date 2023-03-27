@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>Puissance 4 Local</title>
     <!--lien avec le css-->
-    <link href="CSS/style.css" rel="stylesheet"/>
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <script src="JS/jquery-3.6.3.min.js"></script>
-    <script src="JS/actionLigne.js"></script>
+    <link href="/Puissance_4/CSS/style.css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
+    <script src="/Puissance_4/JS/jquery-3.6.3.min.js"></script>
+    <script src="/Puissance_4/JS/actionLigne.js"></script>
 
 </head>
 
 <body>
     <?php
     session_start();
-    require_once 'connexionDB.php';
+    require_once '/Puissance_4/Connexion/connexionDB.php';
     $req = "SELECT * FROM parties WHERE Id_partie = ?";
     $res = $cnx->prepare($req);
     $res->execute([$_GET['id_partie']]);
@@ -60,7 +60,7 @@
       }
       echo "</div>";
       echo "</div>";
-      echo "<button id=\"retourJeu\" onclick=\"window.location.href='demarrerPartieLigne.php'\">Retour Menu</button>";
+      echo "<button id=\"retourJeu\" onclick=\"window.location.href='/Puissance_4/PartieEnLigne/demarrerPartieEnLigne.php'\">Retour Menu</button>";
       
 
     ?>

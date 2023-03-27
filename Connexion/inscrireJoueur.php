@@ -39,7 +39,7 @@
     } else {
          // Affichez et rediriger les erreurs éventuelles
          $_SESSION['erreurs'] = $erreurs;
-        header("location:/Puissance_4/Connexion/inscrireForm.php"); 
+        header("location: /Puissance_4/Connexion/inscrireForm.php"); 
         exit();    
     }
 
