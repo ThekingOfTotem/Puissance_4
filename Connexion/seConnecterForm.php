@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <title>Connexion</title>
     <!--lien avec le css-->
-    <link href="/Puissance_4/CSS/indexStyle.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
+    <link href="../CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="../Image/favicon.png">
 </head>
 
 <body>
-<IMG class="displayed" src="/Puissance_4/Image/logo.png">
+<IMG class="displayed" src="../Image/logo.png">
 
 <p id="titreJ">Veuillez vous connecter</p>
 
@@ -42,7 +42,7 @@
 			unset($_SESSION['erreurs']);
 		}
 	?>
-<button id="retourJ" onclick="window.location.href='/Puissance_4/index.html'">Retour Menu</button>
+<button id="retourJ" onclick="window.location.href='../index.html'">Retour Menu</button>
 
 
 </body>

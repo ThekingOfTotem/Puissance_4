@@ -8,16 +8,16 @@
     <meta charset="UTF-8">
     <title>Inscription</title>
     <!--lien avec le css-->
-    <link href="/Puissance_4/CSS/indexStyle.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
+    <link href="../CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="../Image/favicon.png">
 </head>
 
 <body>
-<IMG class="displayed" src="/Puissance_4/Image/logo.png">
+<IMG class="displayed" src="../Image/logo.png">
 
 <p id="titreJ">Créez votre compte</p>
 
-<form method="post" action="/Puissance_4/Connexion/inscrireJoueur.php">
+<form method="post" action="../Connexion/inscrireJoueur.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
 	    <input type="text" id="pseudo" name="pseudo" placeholder="Nom du joueur" required>
@@ -42,7 +42,7 @@
 			unset($_SESSION['erreurs']);
 		}
 	?>
-<button id="retourJ" onclick="window.location.href='/Puissance_4/Connexion/seConnecterForm.php'">Retour Menu</button>
+<button id="retourJ" onclick="window.location.href='../Connexion/seConnecterForm.php'">Retour Menu</button>
 
 
 </body>

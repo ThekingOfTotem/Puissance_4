@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once '/Puissance_4/Connexion/connexionDB.php';
+require_once '../Connexion/connexionDB.php';
 
 if (!isset($_SESSION['pseudo'])) {
-    header("Location: /Puissance_4/PartieEnLigne/afficherMenuEnLigne.php");
+    header("Location: ../PartieEnLigne/afficherMenuEnLigne.php");
     exit();
 }
 
@@ -24,9 +24,9 @@ $tabStat = $res->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Puissance 4</title>
-    <link href="/Puissance_4/CSS/indexStyle.css" rel="stylesheet" />
+    <link href="../CSS/indexStyle.css" rel="stylesheet" />
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../Image/favicon.png">
     <style>
         th {
             border: 2px solid #ddd;
@@ -62,7 +62,7 @@ $tabStat = $res->fetch();
 </head>
 
 <body>
-    <IMG class="displayed" src="/Puissance_4/Image/logo.png">
+    <IMG class="displayed" src="../Image/logo.png">
    
         <p id="titre">Vos statistiques <?php echo $_SESSION['pseudo']; ?> : </p>
    
@@ -97,7 +97,7 @@ $tabStat = $res->fetch();
         </table>
 
     </div>
-    <button id="retourJ" onclick="window.location.href='/Puissance_4/PartieEnLigne/afficherMenuEnLigne.php'">Retour Menu</button>
+    <button id="retourJ" onclick="window.location.href='../PartieEnLigne/afficherMenuEnLigne.php'">Retour Menu</button>
 
 </body>
 
