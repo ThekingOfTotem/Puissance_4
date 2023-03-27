@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require '/Puissance_4/Connexion/connexionDB.php';
+require '../Connexion/connexionDB.php';
 //$cnx = new PDO('mysql:host=localhost;dbname=aitbouqdir1','root','');
 
 $grille = $_SESSION["grille"];
