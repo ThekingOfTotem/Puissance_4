@@ -15,7 +15,7 @@
 <body>
     <IMG class="displayed" src="/Puissance_4/Image/logo.png">
     <div id="block_button_ligne">
-    <button id="jaune" onclick="window.location.href='/Puissance_4/PartieEnLigne/creerPartieLigne.php'">Créer une partie</button>
+    <button id="jaune" onclick="window.location.href='/Puissance_4/PartieEnLigne/creerPartieEnLigne.php'">Créer une partie</button>
     </div>
 
     <div id="parties-en-cours">

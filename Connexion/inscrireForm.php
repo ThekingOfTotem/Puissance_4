@@ -17,7 +17,7 @@
 
 <p id="titreJ">Créez votre compte</p>
 
-<form method="post" action="inscriptionJoueur.php">
+<form method="post" action="/Puissance_4/Connexion/inscrireJoueur.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
 	    <input type="text" id="pseudo" name="pseudo" placeholder="Nom du joueur" required>
