@@ -9,16 +9,16 @@
     <meta charset="UTF-8">
     <title>Connexion</title>
     <!--lien avec le css-->
-    <link href="CSS/indexStyle.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link href="/Puissance_4/CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
 </head>
 
 <body>
-<IMG class="displayed" src="logo.png">
+<IMG class="displayed" src="/Puissance_4/Image/logo.png">
 
 <p id="titreJ">Veuillez vous connecter</p>
 
-<form method="post" action="connexionJoueur.php">
+<form method="post" action="connecterJoueur.php">
     <!--On demande le nom des joueurs-->
     <div id="name1">
 	    <input type="text" id="pseudo" name="pseudo" placeholder="Nom du joueur" required>
@@ -32,7 +32,7 @@
 	<input id="val" type="submit" value="Valider">
 </form>
 <div id="inscription">
-    <p>Pas de compte ? <a href="inscriptionForm.php">Créer un compte</a></p>
+    <p>Pas de compte ? <a href="inscrireForm.php">Créer un compte</a></p>
 </div>
 <?php
 		if(isset($_SESSION['erreurs'])){
@@ -42,7 +42,7 @@
 			unset($_SESSION['erreurs']);
 		}
 	?>
-<button id="retourJ" onclick="window.location.href='index.html'">Retour Menu</button>
+<button id="retourJ" onclick="window.location.href='/Puissance_4/index.html'">Retour Menu</button>
 
 
 </body>

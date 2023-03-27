@@ -8,12 +8,12 @@
     <meta charset="UTF-8">
     <title>Inscription</title>
     <!--lien avec le css-->
-    <link href="CSS/indexStyle.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link href="/Puissance_4/CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
 </head>
 
 <body>
-<IMG class="displayed" src="logo.png">
+<IMG class="displayed" src="/Puissance_4/Image/logo.png">
 
 <p id="titreJ">Créez votre compte</p>
 
@@ -42,7 +42,7 @@
 			unset($_SESSION['erreurs']);
 		}
 	?>
-<button id="retourJ" onclick="window.location.href='connexionForm.php'">Retour Menu</button>
+<button id="retourJ" onclick="window.location.href='/Puissance_4/Connexion/seConnecterForm.php'">Retour Menu</button>
 
 
 </body>

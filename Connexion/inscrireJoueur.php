@@ -3,7 +3,7 @@
 	require_once 'connexionDB.php'; 
     if (!isset($_POST["pseudo"],$_POST["password"],$_POST["password_confirmation"] ))
     {
-        header("location:inscriptionForm.php"); 
+        header("location:/Puissance_4/Connexion/inscrireForm.php"); 
         exit(); 
     }
 
@@ -33,13 +33,13 @@
         $res= $cnx->prepare($req);
         $res->execute([$pseudo, $password]);
          // Redirigez l'utilisateur vers une page de confirmation d'inscription
-        header("Location: menuLigne.php");
+        header("Location: /Puissance_4/PartieEnLigne/afficherMenuEnLigne.php");
         $_SESSION['pseudo']=$pseudo;
         exit();
     } else {
          // Affichez et rediriger les erreurs éventuelles
          $_SESSION['erreurs'] = $erreurs;
-        header("location:inscriptionForm.php"); 
+        header("location:/Puissance_4/Connexion/inscrireForm.php"); 
         exit();    
     }
 
