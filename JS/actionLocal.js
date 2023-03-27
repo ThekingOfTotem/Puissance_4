@@ -3,7 +3,7 @@ var nc, j;
 function traiterClic(button) {
     nc = button.getAttribute("data-colonne"); // On récupère la colonne du bouton
     $.ajax({ // On vérifie que le coup soit possible
-        url: "/Puissance_4/PartieLocal/jouerUnCoupLocal.php",
+        url: "../PartieLocal/jouerUnCoupLocal.php",
         type: "GET",
         data: {
             col: nc
@@ -17,7 +17,7 @@ function traiterClic(button) {
 function traiterCoup() {
 
     $.ajax({ // On joue le coup
-        url: "/Puissance_4/PartieLocal/jouerUnCoupLocal.php", // On va executer le script
+        url: "../PartieLocal/jouerUnCoupLocal.php", // On va executer le script
         type: "POST", // En envoyant des valeurs en méthode POST
         data: {
             action: "jouerCoup",
@@ -36,14 +36,14 @@ function traiterCoup() {
                 if (data['victoire'] == true) { // Si le coup fait gagner le joueur 
                     setTimeout(function() {
                         alert("La partie est terminée"); // On affiche un message
-                        window.location.replace("='/Puissance_4/PartieLocal/demarrerPartieLocal.php"); // On redirige vers la page de démarrage
+                        window.location.replace("='../PartieLocal/demarrerPartieLocal.php"); // On redirige vers la page de démarrage
                     }, 20);
                 } else { // Si le coup ne fait pas gagner
                     document.getElementById("nomJoueur").textContent = "C'est à " + data["nomJoueur"] + " de jouer"; // On change l'affichage pour indiquer le prochain tour
                 }
             }
             $.ajax({ // On verifie que la grille n'est pas remplie
-                url: "/Puissance_4/PartieLocal/jouerUnCoupLocal.php",
+                url: "../PartieLocal/jouerUnCoupLocal.php",
                 type: "POST",
                 data: {
                     action: "grilleRemplie"
@@ -52,7 +52,7 @@ function traiterCoup() {
                     data = JSON.parse(response);
                     if (data == "true") { // Si elle est remplie on arrête la partie et on redirige vers la page de démarrage
                         alert("La partie se termine sur une égalité !");
-                        window.location.replace("='/Puissance_4/PartieLocal/demarrerPartieLocal.php");
+                        window.location.replace("='../PartieLocal/demarrerPartieLocal.php");
                     }
                 }
             });
