@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <title>Choix Joueurs</title>
     <!--lien avec le css-->
-    <link href="CSS/indexStyle.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link href="/I2/Puissance_4/CSS/indexStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/I2/Puissance_4/Image/favicon.png">
 </head>
 
 <body>
-<IMG class="displayed" src="logo.png">
+<IMG class="displayed" src="/I2/Puissance_4/Image/logo.png">
 
 <p id="titreJ">Choisissez vos noms de joueurs</p>
 
@@ -30,7 +30,7 @@
 		
 	<input id="val" type="submit" value="Valider">
 </form>
-<button id="retourJ" onclick="window.location.href='index.html'">Retour Menu</button>
+<button id="retourJ" onclick="window.location.href='/I2/Puissance_4/index.html'">Retour Menu</button>
 
 
 </body>
