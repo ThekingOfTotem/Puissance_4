@@ -36,8 +36,8 @@ function traiterCoup() {
                 if (data['victoire'] == true) { // Si le coup fait gagner le joueur 
                     setTimeout(function() {
                         alert("La partie est terminée"); // On affiche un message
-                        window.location.replace("='../PartieLocal/demarrerPartieLocal.php"); // On redirige vers la page de démarrage
-                    }, 20);
+                        window.location.replace("../PartieLocal/demarrerPartieLocal.php"); // On redirige vers la page de démarrage
+                    }, 10);
                 } else { // Si le coup ne fait pas gagner
                     document.getElementById("nomJoueur").textContent = "C'est à " + data["nomJoueur"] + " de jouer"; // On change l'affichage pour indiquer le prochain tour
                 }
@@ -52,7 +52,7 @@ function traiterCoup() {
                     data = JSON.parse(response);
                     if (data == "true") { // Si elle est remplie on arrête la partie et on redirige vers la page de démarrage
                         alert("La partie se termine sur une égalité !");
-                        window.location.replace("='../PartieLocal/demarrerPartieLocal.php");
+                        window.location.replace("../PartieLocal/demarrerPartieLocal.php");
                     }
                 }
             });
