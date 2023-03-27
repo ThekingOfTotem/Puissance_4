@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Puissance 4 Local</title>
     <!--lien avec le css-->
-    <link href="CSS/style.css" rel="stylesheet"/>
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <script src="JS/jquery-3.6.3.min.js"></script>
-    <script src="JS/action.js"></script>
+    <link href="/Puissance_4/CSS/style.css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="/Puissance_4/Image/favicon.png">
+    <script src="/Puissance_4/JS/jquery-3.6.3.min.js"></script>
+    <script src="/Puissance_4/JS/actionLocal.js"></script>
 
 </head>
 
@@ -25,8 +25,8 @@
     $nomjoueur1 = $_SESSION["nomJoueur1"];
     $nomjoueur2 = $_SESSION["nomJoueur2"];
 
-    require_once 'connexionDB.php'; 
-
+    //require_once '/Puissance_4/Connexion/connexionDB.php'; 
+    $cnx = new PDO('mysql:host=localhost;dbname=aitbouqdir1','root','');
     
 
     $res1 = $cnx->prepare("SELECT nbvictoire FROM partielocal WHERE nomjoueur = ?");
@@ -92,7 +92,7 @@
     }
     echo "</div>";
     echo "</div>";
-    echo "<button id=\"retourJeu\" onclick=\"window.location.href='demarrerPartieLocal.php'\">Retour Menu</button>";
+    echo "<button id=\"retourJeu\" onclick=\"window.location.href='/Puissance_4/PartieLocal/demarrerPartieLocal.php'\">Retour Menu</button>";
     echo "<p id=\"score\">Nombre de victoire :</br>".$nomjoueur1." : ".$victoireJ1."</br>".$nomjoueur2." : ".$victoireJ2."</p>";
     ?>
     
