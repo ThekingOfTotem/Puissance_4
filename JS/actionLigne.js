@@ -2,6 +2,7 @@ var nc, j;
 
 function traiterClic(button) {
     nc = button.getAttribute("data-colonne"); // On récupère la colonne du bouton
+
     $.ajax({ // On vérifie que le coup soit possible
         url: "../PartieEnLigne/jouerUnCoupEnLigne.php",
         type: "GET",
@@ -13,6 +14,26 @@ function traiterClic(button) {
         }
     });
 }
+
+function monTour() {
+
+    $.ajax({
+        url: "../PartiesEnLigne/verifierTour.php",
+        type: "POST",
+        success: function(response) {
+            if (response == -1) {
+                // Si ce n'est pas le tour du joueur, on désactive les boutons
+                $('.Bouton').prop('disabled', true);
+            } else {
+                // Si c'est le tour du joueur, on active les boutons
+                $('.Bouton').prop('disabled', false);
+            }
+        }
+    });
+
+}
+
+
 
 function traiterCoup() {
 

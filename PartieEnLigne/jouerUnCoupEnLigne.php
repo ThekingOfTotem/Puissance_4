@@ -3,9 +3,13 @@ session_start();
 
 require '../Connexion/connexionDB.php';
 //$cnx = new PDO('mysql:host=localhost;dbname=aitbouqdir1','root','');
-
-$grille = $_SESSION["grille"];
-$tour = $_SESSION["tour"];
+$req = "SELECT tour,grille FROM parties WHERE Id_partie = ?";
+$res = $cnx->prepare($req);
+$res->execute([$_GET['id_partie']]);
+$partie = $res->fetch();
+//$grille = $_SESSION["grille"];
+$grille = json_decode($partie['grille']);
+$tour = $partie['tour'];
 $nomjoueur1 = $_SESSION['nomJoueur1'];
 $nomjoueur2 = $_SESSION['nomJoueur2'];
 
@@ -60,7 +64,7 @@ function jouerCoup()
                 $position = $i;
                 if ($_SESSION["tour"] == "Joueur1") {
                     $grille[$i][$col] = 1; //Si c'est au tour du Joueur 1, on rempli la case avec la valeur 1
-                    $_SESSION["grille"] = $grille; // On met à jour la grille
+                    $partie['grille'] = json_encode($grille); // On met à jour la grille
                     if(victoire($grille, 1)){
                         $victoire=true; // Si le coup joué permet de gagner, on change la valeur de la variable victoire
                     }
@@ -70,7 +74,7 @@ function jouerCoup()
                         exit;
                 } if ($_SESSION["tour"] == "Joueur2"){
                     $grille[$i][$col] = 2; //Si c'est au tour du Joueur 2, on rempli la case avec la valeur 2
-                    $_SESSION["grille"] = $grille; // On met à jour la grille
+                    $partie['grille'] = json_encode($grille);  // On met à jour la grille
                     if(victoire($grille, 2)){
                         $victoire=true; // Si le coup joué permet de gagner, on change la valeur de la variable victoire
                     }

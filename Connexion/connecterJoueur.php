@@ -20,11 +20,11 @@
 
     if (!$tabJoueur) {
         $erreurs[] = "Erreur sur le nom d'utilisateur ou le mot de passe";
-    } elseif (password_verify($tabJoueur['Mot_de_passe'],$password)) {
+    } elseif (!password_verify($password,$tabJoueur['Mot_de_passe'])) {
         $erreurs[] = "Erreur sur le nom d'utilisateur ou le mot de passe";
+        echo("test");
     }
-
-
+//var_dump($tabJoueur);
     if (empty($erreurs)) {
         // Si les informations de connexion sont valides, redirigez l'utilisateur vers une page de menu
         header("Location: ../PartieEnLigne/afficherMenuEnLigne.php");
@@ -33,7 +33,7 @@
     }else {
         // Affichez et rediriger les erreurs éventuelles
        $_SESSION['erreurs'] = $erreurs;
-       header("location:connexionForm.php"); 
+       header("location:seConnecterForm.php"); 
        exit();    
    }
 
