@@ -60,6 +60,7 @@
     }
   }
   echo "</div>";
+  echo "<button class=Bouton onclick='traiterClic(this)'>$num</button>";
   echo "</div>";
   echo "<button id=\"retourJeu\" onclick=\"window.location.href='../PartieEnLigne/demarrerPartieEnLigne.php'\">Retour Menu</button>";
 

@@ -33,7 +33,24 @@ function monTour() {
 
 }
 
+function verifierTour() {
 
+    $.ajax({
+        url: "../PartiesEnLigne/verifierTour.php",
+        type: "POST",
+        success: function(response) {
+            if (response == -1) {
+                // Si ce n'est pas le tour du joueur, on affiche un message
+                alert("Ce n'est pas votre tour de jouer !");
+            } else {
+                // Si c'est le tour du joueur, on ne fait rien
+            }
+        }
+    });
+
+}
+
+setInterval(verifierTour, 2000);
 
 function traiterCoup() {
 
