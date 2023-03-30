@@ -1,6 +1,6 @@
 var nc, j;
 
-function traiterClic(button) {
+function traiterClic(button, id) {
     nc = button.getAttribute("data-colonne"); // On récupère la colonne du bouton
 
     $.ajax({ // On vérifie que le coup soit possible
@@ -8,6 +8,7 @@ function traiterClic(button) {
         type: "GET",
         data: {
             col: nc
+
         },
         success: function(response) { // Si le coup est possible on l'execute
             traiterCoup()
@@ -18,7 +19,7 @@ function traiterClic(button) {
 function monTour() {
 
     $.ajax({
-        url: "../PartiesEnLigne/verifierTour.php",
+        url: "../PartieEnLigne/verifierTour.php",
         type: "POST",
         success: function(response) {
             if (response == -1) {
@@ -36,10 +37,12 @@ function monTour() {
 function verifierTour() {
 
     $.ajax({
-        url: "../PartiesEnLigne/verifierTour.php",
+        url: "../PartieEnLigne/verifierTour.php",
         type: "POST",
+
         success: function(response) {
-            if (response == -1) {
+
+            if (response == false) {
                 // Si ce n'est pas le tour du joueur, on affiche un message
                 alert("Ce n'est pas votre tour de jouer !");
             } else {

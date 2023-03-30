@@ -62,24 +62,24 @@ function jouerCoup()
         for ($i = 5; $i >= 0; $i--) {
             if ($grille[$i][$col] == 0) {//On cherche en partant du bas de la colonne la prochaine case à remplir
                 $position = $i;
-                if ($_SESSION["tour"] == "Joueur1") {
+                if ($_SESSION["ID_Joueur"] == "Joueur1") {
                     $grille[$i][$col] = 1; //Si c'est au tour du Joueur 1, on rempli la case avec la valeur 1
                     $partie['grille'] = json_encode($grille); // On met à jour la grille
                     if(victoire($grille, 1)){
                         $victoire=true; // Si le coup joué permet de gagner, on change la valeur de la variable victoire
                     }
-                        $_SESSION["tour"] = "Joueur2"; // On change de joueur
-                        $data = array('couleur'=>'red','nomJoueurOld' => $_SESSION["nomJoueur1"] ,'nomJoueur' => $_SESSION["nomJoueur2"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
+                        $_SESSION["ID_Joueur"] = "Joueur2"; // On change de joueur
+                        $data = array('couleur'=>'red','nomJoueurOld' => $_SESSION["nomJoueur1"] ,'nomJoueur' => $_SESSION["ID_Joueur"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
                         echo json_encode($data); // On renvoie les valeurs nécessaires 0à la poursuite du jeu
                         exit;
-                } if ($_SESSION["tour"] == "Joueur2"){
+                } if ($_SESSION["ID_Joueur"] == "Joueur2"){
                     $grille[$i][$col] = 2; //Si c'est au tour du Joueur 2, on rempli la case avec la valeur 2
                     $partie['grille'] = json_encode($grille);  // On met à jour la grille
                     if(victoire($grille, 2)){
                         $victoire=true; // Si le coup joué permet de gagner, on change la valeur de la variable victoire
                     }
-                        $_SESSION["tour"] = "Joueur1"; // On change de joueur
-                        $data = array('couleur'=>'yellow','nomJoueurOld' => $_SESSION["nomJoueur2"] ,'nomJoueur' => $_SESSION["nomJoueur1"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
+                        $_SESSION["ID_Joueur"] = "Joueur1"; // On change de joueur
+                        $data = array('couleur'=>'yellow','nomJoueurOld' => $_SESSION["nomJoueur2"] ,'nomJoueur' => $_SESSION["ID_Joueur"], 'grille' => $grille, 'position' => $position, 'victoire' => $victoire);
                         echo json_encode($data); // On renvoie les valeurs nécessaires 0à la poursuite du jeu
                         exit;
                 }

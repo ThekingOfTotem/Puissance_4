@@ -3,23 +3,25 @@
 session_start();
 
 require '../Connexion/connexionDB.php';
-//$cnx = new PDO('mysql:host=localhost;dbname=aitbouqdir1','root','');
+$tutu = $_SESSION['ID_Partie'];
 $req = "SELECT Tour,grille FROM parties WHERE Id_partie = ?";
 $res = $cnx->prepare($req);
-$res->execute([$_GET['id_partie']]);
+$res->execute([$tutu]);
 $partie = $res->fetch();
+print_r($partie);
 //$grille = $_SESSION["grille"];
 $tour = $partie['Tour'];
-
-
+$grille = json_decode($partie['grille']);
+var_dump($grille);
+print_r($_SESSION['ID_Joueur']);
 if($_SESSION['ID_Joueur'] == $tour){
     
-    $grille = json_decode($partie['grille']);
-    echo($grille);
-    exit();
+  
+    echo $grille;
+    
 
 }else{
 
-    echo(-1);
+    echo json_encode("false");
 
 }

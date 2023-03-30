@@ -35,6 +35,7 @@
 
 
   $_SESSION['ID_Joueur'] = $partie['Tour'];
+  $_SESSION['ID_Partie']= $_GET['id_partie'];
   
   ?>
 
@@ -47,6 +48,7 @@
   echo "<div id=mes-boutons  >";
   for ($colonne = 0; $colonne <= 6; $colonne++) {
     $num = $colonne + 1;
+    
     echo "<button data-colonne=" . $colonne . " class=Bouton onclick='traiterClic(this)'>$num</button>";
   }
   echo "</div>";
@@ -60,7 +62,7 @@
     }
   }
   echo "</div>";
-  echo "<button class=Bouton onclick='traiterClic(this)'>$num</button>";
+  //echo "<button class=Bouton onclick='traiterClic(this)'>$num</button>";
   echo "</div>";
   echo "<button id=\"retourJeu\" onclick=\"window.location.href='../PartieEnLigne/demarrerPartieEnLigne.php'\">Retour Menu</button>";
 
